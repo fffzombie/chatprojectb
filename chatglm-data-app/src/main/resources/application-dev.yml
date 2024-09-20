@@ -1,0 +1,36 @@
+server:
+  port: 8090
+
+#应用配置
+app:
+  config:
+    # 版本，方便通过接口版本升级
+    api-version: v1
+    #跨域
+    cross-origin: '*'
+
+# 线程池配置
+thread:
+  pool:
+    executor:
+      config:
+        core-pool-size: 20
+        max-pool-size: 50
+        keep-alive-time: 5000
+        block-queue-size: 5000
+        policy: CallerRunsPolicy
+
+#Chatglm SDK Config
+chatglm:
+  sdk:
+    config:
+      #官网地址
+      api-host: https://open.bigmodel.cn/
+      #秘钥
+      api-key: 389406a16d0ad1bbed7860f408dfe27e.oLiYZK7lobnFmzvu
+
+# 日志
+logging:
+  level:
+    root: info
+  config: classpath:logback-spring.xml
