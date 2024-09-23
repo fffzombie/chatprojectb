@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 80
 
 #应用配置
 app:
@@ -28,6 +28,17 @@ chatglm:
       api-host: https://open.bigmodel.cn/
       #秘钥
       api-key: 389406a16d0ad1bbed7860f408dfe27e.oLiYZK7lobnFmzvu
+
+
+# 微信公众号配置信息
+# originalid：原始ID
+# appid：个人AppID
+# token：开通接口服务自定义设置
+wx:
+  config:
+    originalid: gh_b286ef7fce39
+    appid: wxbc57b508d086a85d
+    token: b8b6
 
 # 日志
 logging:

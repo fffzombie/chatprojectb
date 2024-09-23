@@ -41,8 +41,7 @@ public class ChatService extends AbstractChatService{
 
         //2.封装参数
         ChatCompletionRequest request = new ChatCompletionRequest();
-        //TODO:暂时写死model的类型
-        request.setModel(Model.GLM_3_TURBO);
+        request.setModel(Model.getModelByCode(chatProcess.getModel()));
         request.setPrompt(messages);
 
         //3.请求应答
@@ -50,6 +49,13 @@ public class ChatService extends AbstractChatService{
             @Override
             public void onEvent(@NotNull EventSource eventSource, @Nullable String id, @Nullable String type, @NotNull String data) {
                 ChatCompletionResponse response = JSON.parseObject(data,ChatCompletionResponse.class);
+
+                //应答完成
+                if("[DONE]".equals(data)){
+                    log.info("[输出结束] Tokens {}", JSON.toJSONString(data));
+                    responseBodyEmitter.complete();
+                }
+
                 //发送信息
                 try {
                     responseBodyEmitter.send(response.getData());
@@ -57,19 +63,9 @@ public class ChatService extends AbstractChatService{
                     throw new ChatGLMException(e.getMessage());
                 }
 
-//                responseBodyEmitter.complete();
-//                if(EventType.finish.getCode().equals(type)){
-//                    log.info("对话完成");
-//                    responseBodyEmitter.complete();
-//                }
+
             }
 
-            //应答完成
-            @Override
-            public void onClosed(@NotNull EventSource eventSource) {
-                log.info("对话完成");
-                responseBodyEmitter.complete();
-            }
         });
 
 
