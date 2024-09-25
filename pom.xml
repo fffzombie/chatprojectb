@@ -114,7 +114,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>chatgpt-data</finalName>
+        <finalName>chatglm-data</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

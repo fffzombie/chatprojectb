@@ -1,0 +1,1 @@
+docker run -d --name chatglm-data -p 80:80 zombie_chatglm-data-app:1.0
