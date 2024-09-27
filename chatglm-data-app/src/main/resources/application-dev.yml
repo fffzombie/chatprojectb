@@ -8,6 +8,10 @@ app:
     api-version: v1
     #跨域
     cross-origin: '*'
+    # 访问频次限制
+    limit-count: 10
+    # 白名单，不做频次拦截【微信的openid】 多个值用逗号分隔oTB7j6gF9gDF4JAyGTxyZhJTBcEo
+    white-list: oTB7j6gF9gDF4JAyGTxyZhJTBcEo
 
 # 线程池配置
 thread:

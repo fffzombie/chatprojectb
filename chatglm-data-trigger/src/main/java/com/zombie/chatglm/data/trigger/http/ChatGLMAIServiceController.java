@@ -71,9 +71,13 @@ public class ChatGLMAIServiceController {
                 return emitter;
             }
 
-            //3.构建参数
+            //3.获取openid
+            String openid = authService.openid(token);
+            log.info("流式问答请求处理，openid:{} 请求模型:{}", openid, request.getModel());
+
+            //4.构建参数
             ChatProcessAggregate chatProcessAggregate = ChatProcessAggregate.builder()
-                    .token(token)
+                    .openid(openid)
                     .model(request.getModel())
                     .messages(request.getMessages().stream()
                             .map(entity -> MessageEntity.builder()
@@ -83,7 +87,7 @@ public class ChatGLMAIServiceController {
                             .collect(Collectors.toList()))
                     .build();
 
-            //4.请求结果&返回
+            //5.请求结果&返回
             return chatService.completions(emitter,chatProcessAggregate);
 
         }catch (Exception e) {

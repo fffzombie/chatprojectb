@@ -6,4 +6,5 @@ public interface IAuthService {
     AuthStateEntity doLogin(String code);
 
     boolean checkToken(String token);
+    String openid(String token);
 }

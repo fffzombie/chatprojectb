@@ -1,6 +1,7 @@
 package com.zombie.chatglm.data.domain.openai.model.aggregates;
 
 import com.zombie.chatglm.data.domain.openai.model.entity.MessageEntity;
+import com.zombie.chatglm.data.types.common.Constants;
 import com.zombie.chatglm.data.types.enums.ChatGLMModel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,9 +16,17 @@ import java.util.List;
 @AllArgsConstructor
 public class ChatProcessAggregate {
     /** 验证信息 */
-    private String token;
+    private String openid;
     /** 默认模型 */
     private String model = ChatGLMModel.CHATGLM_TURBO.getCode();
     /** 问题描述 */
     private List<MessageEntity> messages;
+
+    public boolean isWhiteList(String whiteListStr){
+        String[] whiteList = whiteListStr.split(Constants.SPLIT);
+        for (String whiteOpenId : whiteList) {
+            if(whiteOpenId.equals(openid)) return true;
+        }
+        return false;
+    }
 }

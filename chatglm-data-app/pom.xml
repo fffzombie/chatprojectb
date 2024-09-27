@@ -55,6 +55,10 @@
             <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>sensitive-word</artifactId>
+        </dependency>
         <!--    chatglm-sdk-java    -->
         <dependency>
             <groupId>com.zombie</groupId>

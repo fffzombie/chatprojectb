@@ -8,6 +8,10 @@ import cn.bugstack.chatglm.model.*;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
+import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;
+import com.zombie.chatglm.data.domain.openai.model.valobj.LogicCheckTypeVO;
+import com.zombie.chatglm.data.domain.openai.service.rule.ILogicFilter;
+import com.zombie.chatglm.data.domain.openai.service.rule.factory.DefaultLogicFactory;
 import com.zombie.chatglm.data.types.exception.ChatGLMException;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Response;
@@ -18,14 +22,19 @@ import org.jetbrains.annotations.Nullable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Slf4j
 @Service
 public class ChatService extends AbstractChatService{
+
+    @Resource
+    DefaultLogicFactory logicFactory;
 
     @Override
     protected void doMessageResponse(ChatProcessAggregate chatProcess, ResponseBodyEmitter responseBodyEmitter) throws Exception {
@@ -69,5 +78,18 @@ public class ChatService extends AbstractChatService{
         });
 
 
+    }
+
+    @Override
+    protected RuleLogicEntity<ChatProcessAggregate> doCheckLogic(ChatProcessAggregate chatProcess, String... logics) throws Exception {
+        Map<String, ILogicFilter> logicFilterMap = logicFactory.openLogicFilter();
+        RuleLogicEntity<ChatProcessAggregate> entity = null;
+        for (String code : logics) {
+            //拿到对应的过滤器实现类调用filter方法
+            entity = logicFilterMap.get(code).filter(chatProcess);
+            if(!LogicCheckTypeVO.SUCCESS.equals(entity.getType())) return entity;
+        }
+        return entity != null ? entity : RuleLogicEntity.<ChatProcessAggregate>builder()
+                .type(LogicCheckTypeVO.SUCCESS).data(chatProcess).build();
     }
 }

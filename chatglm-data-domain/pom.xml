@@ -43,6 +43,10 @@
             <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.github.houbb</groupId>
+            <artifactId>sensitive-word</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.zombie</groupId>
             <artifactId>chatglm-sdk-java-mod</artifactId>
         </dependency>
