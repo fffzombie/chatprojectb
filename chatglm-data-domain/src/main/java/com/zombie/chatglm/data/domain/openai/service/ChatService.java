@@ -9,6 +9,7 @@ import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
 import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;
+import com.zombie.chatglm.data.domain.openai.model.entity.UserAccountQuotaEntity;
 import com.zombie.chatglm.data.domain.openai.model.valobj.LogicCheckTypeVO;
 import com.zombie.chatglm.data.domain.openai.service.rule.ILogicFilter;
 import com.zombie.chatglm.data.domain.openai.service.rule.factory.DefaultLogicFactory;
@@ -34,7 +35,7 @@ import java.util.stream.Collectors;
 public class ChatService extends AbstractChatService{
 
     @Resource
-    DefaultLogicFactory logicFactory;
+    private DefaultLogicFactory logicFactory;
 
     @Override
     protected void doMessageResponse(ChatProcessAggregate chatProcess, ResponseBodyEmitter responseBodyEmitter) throws Exception {
@@ -81,12 +82,14 @@ public class ChatService extends AbstractChatService{
     }
 
     @Override
-    protected RuleLogicEntity<ChatProcessAggregate> doCheckLogic(ChatProcessAggregate chatProcess, String... logics) throws Exception {
-        Map<String, ILogicFilter> logicFilterMap = logicFactory.openLogicFilter();
+    protected RuleLogicEntity<ChatProcessAggregate> doCheckLogic(ChatProcessAggregate chatProcess, UserAccountQuotaEntity userAccountQuotaEntity, String... logics) throws Exception {
+        Map<String, ILogicFilter<UserAccountQuotaEntity>> logicFilterMap = logicFactory.openLogicFilter();
         RuleLogicEntity<ChatProcessAggregate> entity = null;
         for (String code : logics) {
+            //如果传入空过滤则此次不调用
+            if(DefaultLogicFactory.LogicModel.NULL.getCode().equals(code))continue;
             //拿到对应的过滤器实现类调用filter方法
-            entity = logicFilterMap.get(code).filter(chatProcess);
+            entity = logicFilterMap.get(code).filter(chatProcess,userAccountQuotaEntity);
             if(!LogicCheckTypeVO.SUCCESS.equals(entity.getType())) return entity;
         }
         return entity != null ? entity : RuleLogicEntity.<ChatProcessAggregate>builder()

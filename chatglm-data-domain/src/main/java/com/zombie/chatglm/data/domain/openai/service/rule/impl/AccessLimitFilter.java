@@ -4,6 +4,7 @@ import com.google.common.cache.Cache;
 import com.zombie.chatglm.data.domain.openai.annotation.LogicStrategy;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
 import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;
+import com.zombie.chatglm.data.domain.openai.model.entity.UserAccountQuotaEntity;
 import com.zombie.chatglm.data.domain.openai.model.valobj.LogicCheckTypeVO;
 import com.zombie.chatglm.data.domain.openai.service.rule.ILogicFilter;
 import com.zombie.chatglm.data.domain.openai.service.rule.factory.DefaultLogicFactory;
@@ -16,7 +17,7 @@ import javax.annotation.Resource;
 @Slf4j
 @Component
 @LogicStrategy(logicMode = DefaultLogicFactory.LogicModel.ACCESS_LIMIT)
-public class AccessLimitFilter implements ILogicFilter {
+public class AccessLimitFilter implements ILogicFilter<UserAccountQuotaEntity> {
 
     @Value("${app.config.limit-count:10}")
     private Integer limitCount;
@@ -28,16 +29,22 @@ public class AccessLimitFilter implements ILogicFilter {
 
 
     @Override
-    public RuleLogicEntity<ChatProcessAggregate> filter(ChatProcessAggregate chatProcess) throws Exception {
+    public RuleLogicEntity<ChatProcessAggregate> filter(ChatProcessAggregate chatProcess,UserAccountQuotaEntity data) throws Exception {
         //1.白名单用户直接放行
         if(chatProcess.isWhiteList(whiteListStr)){
             return RuleLogicEntity.<ChatProcessAggregate>builder()
                     .type(LogicCheckTypeVO.SUCCESS).data(chatProcess).build();
         }
 
+        //2.拥有个人账户，不做系统访问次数拦截
+        if(null != data){
+            return RuleLogicEntity.<ChatProcessAggregate>builder()
+                    .type(LogicCheckTypeVO.SUCCESS).data(chatProcess).build();
+        }
+
         String openid = chatProcess.getOpenid();
 
-        //2.访问次数判断
+        //3.访问次数判断
         //如果缓存中没有找到该值，则会执行 () -> 0，这实际上是一个无参的 Lambda 表达式，它返回整数 0。
         int visitCount = visitCache.get(openid, () -> 0);
         if(visitCount < limitCount){
