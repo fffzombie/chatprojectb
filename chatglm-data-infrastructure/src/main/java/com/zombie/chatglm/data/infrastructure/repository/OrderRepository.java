@@ -18,7 +18,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Repository
 public class OrderRepository implements IOrderRepository {
@@ -125,4 +127,41 @@ public class OrderRepository implements IOrderRepository {
             userAccountDao.insert(userAccountPOReq);
         }
     }
+
+    @Override
+    public List<String> queryTimeoutCloseOrderList() {
+        return openAIOrderDao.queryTimeoutCloseOrderList();
+    }
+
+    @Override
+    public boolean changeOrderClose(String orderId) {
+        return openAIOrderDao.changeOrderClose(orderId);
+    }
+
+    @Override
+    public List<String> queryNoPayNotifyOrder() {
+        return openAIOrderDao.queryNoPayNotifyOrder();
+    }
+
+    @Override
+    public List<String> queryReplenishmentOrder() {
+        return openAIOrderDao.queryReplenishmentOrder();
+    }
+
+    @Override
+    public List<ProductEntity> queryProductList() {
+        List<OpenAIProductPO> openAIProductPOList = openAIProductDao.queryProductList();
+        List<ProductEntity> productEntityList = new ArrayList<>(openAIProductPOList.size());
+        for (OpenAIProductPO openAIProductPO : openAIProductPOList) {
+            ProductEntity productEntity = new ProductEntity();
+            productEntity.setProductId(openAIProductPO.getProductId());
+            productEntity.setProductName(openAIProductPO.getProductName());
+            productEntity.setProductDesc(openAIProductPO.getProductDesc());
+            productEntity.setQuota(openAIProductPO.getQuota());
+            productEntity.setPrice(openAIProductPO.getPrice());
+            productEntityList.add(productEntity);
+        }
+        return productEntityList;
+    }
+
 }

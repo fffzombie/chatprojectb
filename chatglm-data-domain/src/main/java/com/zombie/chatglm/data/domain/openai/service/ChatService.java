@@ -4,7 +4,6 @@ package com.zombie.chatglm.data.domain.openai.service;
 * 业务具体实现
 * */
 
-import cn.bugstack.chatglm.model.*;
 import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
@@ -14,6 +13,9 @@ import com.zombie.chatglm.data.domain.openai.model.valobj.LogicCheckTypeVO;
 import com.zombie.chatglm.data.domain.openai.service.rule.ILogicFilter;
 import com.zombie.chatglm.data.domain.openai.service.rule.factory.DefaultLogicFactory;
 import com.zombie.chatglm.data.types.exception.ChatGLMException;
+import com.zombie.chatglm.model.ChatCompletionRequest;
+import com.zombie.chatglm.model.ChatCompletionResponse;
+import com.zombie.chatglm.model.Model;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Response;
 import okhttp3.sse.EventSource;

@@ -1,8 +1,8 @@
 package com.zombie.chatglm.data.config;
 
-import cn.bugstack.chatglm.session.OpenAiSession;
-import cn.bugstack.chatglm.session.OpenAiSessionFactory;
-import cn.bugstack.chatglm.session.defaults.DefaultOpenAiSessionFactory;
+import com.zombie.chatglm.session.OpenAiSession;
+import com.zombie.chatglm.session.OpenAiSessionFactory;
+import com.zombie.chatglm.session.defaults.DefaultOpenAiSessionFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,7 @@ public class ChatGLMSDKConfig {
     @Bean
     public OpenAiSession openAiSession(ChatGLMSDKConfigProperties properties){
         //1.配置文件
-        cn.bugstack.chatglm.session.Configuration configuration = new cn.bugstack.chatglm.session.Configuration();
+        com.zombie.chatglm.session.Configuration configuration = new com.zombie.chatglm.session.Configuration();
         configuration.setApiHost(properties.getApiHost());
         configuration.setApiSecretKey(properties.getApiKey());
 

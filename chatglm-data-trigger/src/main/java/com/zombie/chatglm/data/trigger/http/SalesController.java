@@ -1,14 +1,18 @@
 package com.zombie.chatglm.data.trigger.http;
 
+import com.alibaba.fastjson.JSON;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.google.common.eventbus.EventBus;
 import com.zombie.chatglm.data.domain.auth.service.IAuthService;
 import com.zombie.chatglm.data.domain.order.model.entity.PayOrderEntity;
+import com.zombie.chatglm.data.domain.order.model.entity.ProductEntity;
 import com.zombie.chatglm.data.domain.order.model.entity.ShopCartEntity;
 import com.zombie.chatglm.data.domain.order.service.IOrderService;
+import com.zombie.chatglm.data.trigger.http.dto.SaleProductDTO;
 import com.zombie.chatglm.data.types.common.Constants;
 import com.zombie.chatglm.data.types.model.Response;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.util.bcel.Const;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,7 +21,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Slf4j
@@ -39,6 +45,59 @@ public class SalesController {
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
+
+    /**
+     * 商品列表查询
+     * 开始地址：http://localhost:8091/api/v1/sale/query_product_list
+     * 测试地址：http://apix.natapp1.cc/api/v1/sale/query_product_list
+     * <p>
+     * curl -X GET \
+     * -H "Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGZBOXc4LTI..." \
+     * -H "Content-Type: application/x-www-form-urlencoded" \
+     * http://localhost:8091/api/v1/sale/query_product_list
+     */
+    @GetMapping("query_product_list")
+    public Response<List<SaleProductDTO>> queryProductList(@RequestHeader("Authorization") String token){
+
+        try{
+            //1.token校验
+            boolean success = authService.checkToken(token);
+            if(!success){
+                return Response.<List<SaleProductDTO>>builder()
+                        .code(Constants.ResponseCode.TOKEN_ERROR.getCode())
+                        .info(Constants.ResponseCode.TOKEN_ERROR.getInfo())
+                        .build();
+            }
+            //2.查询商品
+            List<ProductEntity> productEntityList = orderService.queryProductList();
+            log.info("商品查询 {}", JSON.toJSONString(productEntityList));
+
+            List<SaleProductDTO> mallProductDTOS = new ArrayList<>();
+            for (ProductEntity productEntity : productEntityList) {
+                SaleProductDTO saleProductDTO = SaleProductDTO.builder()
+                        .productDesc(productEntity.getProductDesc())
+                        .productName(productEntity.getProductName())
+                        .productId(productEntity.getProductId())
+                        .price(productEntity.getPrice())
+                        .quota(productEntity.getQuota())
+                        .build();
+                mallProductDTOS.add(saleProductDTO);
+            }
+
+            //3.返回结果
+            return Response.<List<SaleProductDTO>>builder()
+                    .code(Constants.ResponseCode.SUCCESS.getCode())
+                    .info(Constants.ResponseCode.SUCCESS.getInfo())
+                    .data(mallProductDTOS)
+                    .build();
+        }catch (Exception e){
+            log.error("商品查询失败", e);
+            return Response.<List<SaleProductDTO>>builder()
+                    .code(Constants.ResponseCode.UN_ERROR.getCode())
+                    .info(Constants.ResponseCode.UN_ERROR.getInfo())
+                    .build();
+        }
+    }
 
 
     /**

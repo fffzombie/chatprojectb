@@ -1,6 +1,6 @@
 package com.zombie.chatglm.data.domain.openai.service;
 
-import cn.bugstack.chatglm.session.OpenAiSession;
+import com.zombie.chatglm.session.OpenAiSession;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
 import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;

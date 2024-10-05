@@ -8,6 +8,7 @@ import com.zombie.chatglm.data.domain.order.model.entity.UnpaidOrderEntity;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @description 订单仓储接口
@@ -26,4 +27,14 @@ public interface IOrderRepository {
     boolean changeOrderPaySuccess(String orderId, String transactionId, BigDecimal payAmount, Date payTime);
 
     void deliverGoods(String orderId);
+
+    List<String> queryTimeoutCloseOrderList();
+
+    boolean changeOrderClose(String orderId);
+
+    List<String> queryNoPayNotifyOrder();
+
+    List<String> queryReplenishmentOrder();
+
+    List<ProductEntity> queryProductList();
 }

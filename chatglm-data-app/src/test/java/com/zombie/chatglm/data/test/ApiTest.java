@@ -1,11 +1,11 @@
 package com.zombie.chatglm.data.test;
 
-import cn.bugstack.chatglm.model.*;
-import cn.bugstack.chatglm.session.Configuration;
-import cn.bugstack.chatglm.session.OpenAiSession;
-import cn.bugstack.chatglm.session.OpenAiSessionFactory;
-import cn.bugstack.chatglm.session.defaults.DefaultOpenAiSessionFactory;
-import cn.bugstack.chatglm.utils.BearerTokenUtils;
+import com.zombie.chatglm.model.*;
+import com.zombie.chatglm.session.Configuration;
+import com.zombie.chatglm.session.OpenAiSession;
+import com.zombie.chatglm.session.OpenAiSessionFactory;
+import com.zombie.chatglm.session.defaults.DefaultOpenAiSessionFactory;
+import com.zombie.chatglm.utils.BearerTokenUtils;
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Response;
@@ -121,7 +121,7 @@ public class ApiTest {
 
         // 入参；模型、请求信息
         ChatCompletionRequest request = new ChatCompletionRequest();
-        request.setModel(Model.GLM_4V); // GLM_3_5_TURBO、GLM_4
+        request.setModel(Model.GLM_3_TURBO); // GLM_3_5_TURBO、GLM_4
         request.setIsCompatible(false);
         // 24年1月发布的 glm-3-turbo、glm-4 支持函数、知识库、联网功能
         request.setTools(new ArrayList<ChatCompletionRequest.Tool>() {
