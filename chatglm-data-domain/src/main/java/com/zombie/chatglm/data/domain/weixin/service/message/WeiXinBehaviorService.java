@@ -1,6 +1,5 @@
 package com.zombie.chatglm.data.domain.weixin.service.message;
 
-import cn.bugstack.chatglm.model.EventType;
 import com.google.common.cache.Cache;
 import com.zombie.chatglm.data.domain.weixin.model.entity.MessageTextEntity;
 import com.zombie.chatglm.data.domain.weixin.model.entity.UserBehaviorMessageEntity;

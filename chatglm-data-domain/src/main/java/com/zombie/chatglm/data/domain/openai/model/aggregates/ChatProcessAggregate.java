@@ -3,6 +3,7 @@ package com.zombie.chatglm.data.domain.openai.model.aggregates;
 import com.zombie.chatglm.data.domain.openai.model.entity.MessageEntity;
 import com.zombie.chatglm.data.types.common.Constants;
 import com.zombie.chatglm.data.types.enums.ChatGLMModel;
+import com.zombie.chatglm.data.types.enums.OpenAiChannel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -29,4 +30,6 @@ public class ChatProcessAggregate {
         }
         return false;
     }
+
+    public OpenAiChannel getChannel(){return OpenAiChannel.getChannel(this.model);}
 }

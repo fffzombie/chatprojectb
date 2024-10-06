@@ -1,5 +1,8 @@
 package com.zombie.chatglm.data.test;
 
+import cn.bugstack.chatgpt.common.Constants;
+import cn.bugstack.chatgpt.domain.chat.Message;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.model.*;
 import com.zombie.chatglm.session.Configuration;
 import com.zombie.chatglm.session.OpenAiSession;
@@ -17,6 +20,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 

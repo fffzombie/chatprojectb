@@ -80,6 +80,11 @@
             <groupId>com.zombie</groupId>
             <artifactId>chatglm-sdk-java-mod</artifactId>
         </dependency>
+        <!--    chatgpt-sdk-java    -->
+        <dependency>
+            <groupId>com.zombie</groupId>
+            <artifactId>chatgpt-sdk-java</artifactId>
+        </dependency>
         <!-- 自身模块 begin -->
         <dependency>
             <groupId>com.zombie</groupId>

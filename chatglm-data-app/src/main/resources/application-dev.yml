@@ -32,6 +32,14 @@ chatglm:
       api-host: https://open.bigmodel.cn/
       #秘钥
       api-key: 389406a16d0ad1bbed7860f408dfe27e.oLiYZK7lobnFmzvu
+#ChatGPT SDK Config
+chatgpt:
+  sdk:
+    config:
+      #转发地址
+      api-host: https://pro-share-aws-api.zcyai.com/
+      #秘钥
+      api-key: sk-yjG4T0L479h8GjcU156aFb93D9D54dF7BfC8CbF1683cDdEb
 
 
 # 微信公众号配置信息

@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @RestController
 @CrossOrigin("${app.config.cross-origin}")
 @RequestMapping("/api/${app.config.api-version}/")
-public class ChatGLMAIServiceController {
+public class ChatAIServiceController {
 
     @Resource
     private IChatService chatService;
