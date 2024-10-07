@@ -1,6 +1,7 @@
 package com.zombie.chatglm.data.trigger.job;
 
 import com.zombie.chatglm.data.domain.order.service.IOrderService;
+import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -26,6 +27,7 @@ public class TimeoutCloseOrderJob {
     private IOrderService orderService;
 
     //定时任务，每10分钟执行一次
+    @Timed(value = "timeout_close_order_job",description = "超时关单")
     @Scheduled(cron = "0 0/10 * * * ?")
     public void exec(){
         List<String> orderIds = orderService.queryTimeoutCloseOrderList();

@@ -9,6 +9,7 @@ import com.zombie.chatglm.data.domain.openai.service.IChatService;
 import com.zombie.chatglm.data.trigger.http.dto.ChatGLMRequestDTO;
 import com.zombie.chatglm.data.types.common.Constants;
 import com.zombie.chatglm.data.types.exception.ChatGLMException;
+import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
@@ -47,6 +48,7 @@ public class ChatAIServiceController {
      * "model": "glm-3-turbo"
      * }"
      */
+    @Timed(value = "chat_completions",description = "对话请求量")
     @RequestMapping(value = "chat/completions",method = RequestMethod.POST)
     public ResponseBodyEmitter completionsStream(@RequestBody ChatGLMRequestDTO request,
                                                  @RequestHeader("Authorization") String token,

@@ -11,6 +11,7 @@ import com.zombie.chatglm.data.domain.order.service.IOrderService;
 import com.zombie.chatglm.data.trigger.http.dto.SaleProductDTO;
 import com.zombie.chatglm.data.types.common.Constants;
 import com.zombie.chatglm.data.types.model.Response;
+import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.tomcat.util.bcel.Const;
 import org.springframework.beans.factory.annotation.Value;
@@ -111,6 +112,7 @@ public class SalesController {
      * -d "productId=1001" \
      * http://localhost:8091/api/v1/sale/create_pay_order
      */
+    @Timed(value = "sales_controller",description = "用户下单")
     @RequestMapping(value = "create_pay_order", method = RequestMethod.POST)
     public Response<String> createParOrder(@RequestHeader("Authorization") String token, @RequestParam Integer productId) {
         try {

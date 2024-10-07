@@ -42,6 +42,32 @@ chatgpt:
       api-key: sk-yjG4T0L479h8GjcU156aFb93D9D54dF7BfC8CbF1683cDdEb
 
 
+# 监控
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 暴露所有端点，包括自定义端点
+  endpoint:
+    metrics:
+      enabled: true
+    health:
+      show-details: always # 显示详细的健康检查信息
+  metrics:
+    export:
+      prometheus:
+        enabled: true # 启用Prometheus
+  prometheus:
+    enabled: true # 启用Prometheus端点
+  jmx:
+    enabled: true # 启用JMX监控
+  system:
+    cpu:
+      enabled: true # 启用CPU监控
+    memory:
+      enabled: true # 启用内存监控
+
+
 # 微信公众号配置信息
 # originalid：原始ID
 # appid：个人AppID
@@ -84,6 +110,22 @@ alipay:
   notify_url: http://zombie.nat300.top/api/v1/sale/pay_notify
   return_url: https://gaga.plus
   gatewayUrl: https://openapi-sandbox.dl.alipaydev.com/gateway.do
+
+
+# Redis
+redis:
+  sdk:
+    config:
+      host: 127.0.0.1
+      port: 6379
+      pool-size: 10
+      min-idle-size: 5
+      idle-timeout: 30000
+      connect-timeout: 5000
+      retry-attempts: 3
+      retry-interval: 1000
+      ping-interval: 60000
+      keep-alive: true
 
 
 # 日志

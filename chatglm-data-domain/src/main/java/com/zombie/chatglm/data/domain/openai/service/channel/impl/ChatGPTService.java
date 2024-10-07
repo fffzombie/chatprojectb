@@ -10,6 +10,7 @@ import com.zombie.chatgpt.domain.chat.ChatCompletionRequest;
 import com.zombie.chatgpt.domain.chat.ChatCompletionResponse;
 import com.zombie.chatgpt.domain.chat.Message;
 import com.zombie.chatgpt.session.OpenAiSession;
+import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.Response;
 import okhttp3.sse.EventSource;
@@ -39,6 +40,7 @@ import java.util.stream.Collectors;
 public class ChatGPTService implements OpenAiGroupService {
     @Resource
     protected OpenAiSession chatGPTOpenAiSession;
+    @Timed(value = "chatgptmodel_domessage_response",description = "chatgpt模型对话次数")
     @Override
     public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter) throws Exception {
         //1.请求消息

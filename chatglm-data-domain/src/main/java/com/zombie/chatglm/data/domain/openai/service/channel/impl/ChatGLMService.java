@@ -8,6 +8,7 @@ import com.zombie.chatglm.model.ChatCompletionRequest;
 import com.zombie.chatglm.model.ChatCompletionResponse;
 import com.zombie.chatglm.model.Model;
 import com.zombie.chatglm.session.OpenAiSession;
+import io.micrometer.core.annotation.Timed;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.sse.EventSource;
 import okhttp3.sse.EventSourceListener;
@@ -35,6 +36,7 @@ import java.util.stream.Collectors;
 public class ChatGLMService implements OpenAiGroupService {
     @Resource
     protected OpenAiSession chatGlMOpenAiSession;
+    @Timed(value = "chatglmmodel_domessage_response",description = "chatglm模型对话次数")
     @Override
     public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter) throws Exception {
         //1.请求消息

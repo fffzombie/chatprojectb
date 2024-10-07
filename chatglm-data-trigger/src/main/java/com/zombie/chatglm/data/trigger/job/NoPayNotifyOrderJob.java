@@ -39,7 +39,7 @@ public class NoPayNotifyOrderJob {
     private EventBus eventBus;
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss");
 
-//    @Scheduled(cron = "0 0/3 * * * ?")
+    @Scheduled(cron = "0 0/3 * * * ?")
     public void exec(){
         try{
             List<String> orderIds = orderService.queryNoPayNotifyOrder();
