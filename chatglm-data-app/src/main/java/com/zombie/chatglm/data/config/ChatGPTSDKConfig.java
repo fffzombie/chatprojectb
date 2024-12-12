@@ -3,6 +3,7 @@ package com.zombie.chatglm.data.config;
 import com.zombie.chatgpt.session.OpenAiSession;
 import com.zombie.chatgpt.session.OpenAiSessionFactory;
 import com.zombie.chatgpt.session.defaults.DefaultOpenAiSessionFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,6 +21,7 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties(ChatGPTSDKConfigProperties.class)
 public class ChatGPTSDKConfig {
     @Bean(name = "chatGPTOpenAiSession")
+    @ConditionalOnProperty(value = "chatgpt.sdk.config.enabled", havingValue = "true", matchIfMissing = false)
     public OpenAiSession openAiSession(ChatGPTSDKConfigProperties properties){
         //1.配置文件
         com.zombie.chatgpt.session.Configuration configuration = new com.zombie.chatgpt.session.Configuration();

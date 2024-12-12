@@ -3,6 +3,7 @@ package com.zombie.chatglm.data.config;
 import com.zombie.chatglm.session.OpenAiSession;
 import com.zombie.chatglm.session.OpenAiSessionFactory;
 import com.zombie.chatglm.session.defaults.DefaultOpenAiSessionFactory;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +20,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(ChatGLMSDKConfigProperties.class)
 public class ChatGLMSDKConfig {
-    @Bean
+    @Bean(name = "chatGLMOpenAiSession")
+    @ConditionalOnProperty(value = "chatglm.sdk.config.enabled", havingValue = "true", matchIfMissing = false)
     public OpenAiSession openAiSession(ChatGLMSDKConfigProperties properties){
         //1.配置文件
         com.zombie.chatglm.session.Configuration configuration = new com.zombie.chatglm.session.Configuration();

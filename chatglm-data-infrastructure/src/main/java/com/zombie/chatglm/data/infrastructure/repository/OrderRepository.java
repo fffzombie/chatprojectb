@@ -1,5 +1,6 @@
 package com.zombie.chatglm.data.infrastructure.repository;
 
+import com.zombie.chatglm.data.domain.openai.model.valobj.UserAccountStatusVO;
 import com.zombie.chatglm.data.domain.order.model.aggregates.CreateOrderAggregate;
 import com.zombie.chatglm.data.domain.order.model.entity.*;
 import com.zombie.chatglm.data.domain.order.model.valobj.PayStatusVO;
@@ -124,6 +125,8 @@ public class OrderRepository implements IOrderRepository {
             int addAccountQuotaCount = userAccountDao.addAccountQuota(userAccountPOReq);
             if (1 != addAccountQuotaCount) throw new RuntimeException("addAccountQuotaCount update count is not equal 1");
         }else {
+            userAccountPOReq.setStatus(UserAccountStatusVO.AVAILABLE.getCode());
+            userAccountPOReq.setModelTypes("glm-3-turbo,glm-4,glm-4v,cogview-3,gpt-3.5-turbo,gpt-4,gpt-4o");
             userAccountDao.insert(userAccountPOReq);
         }
     }

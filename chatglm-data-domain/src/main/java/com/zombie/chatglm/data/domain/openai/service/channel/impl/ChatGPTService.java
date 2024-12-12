@@ -18,6 +18,7 @@ import okhttp3.sse.EventSourceListener;
 import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
@@ -38,7 +39,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class ChatGPTService implements OpenAiGroupService {
-    @Resource
+    @Autowired(required = false)
     protected OpenAiSession chatGPTOpenAiSession;
     @Timed(value = "chatgptmodel_domessage_response",description = "chatgpt模型对话次数")
     @Override

@@ -2,4 +2,5 @@ spring:
   config:
     name: chatglm-data
   profiles:
-    active: dev
+#    active: dev
+    active: prod

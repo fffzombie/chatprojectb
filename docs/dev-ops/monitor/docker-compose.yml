@@ -16,7 +16,6 @@ services:
     image: grafana/grafana:10.2.0
     container_name: grafana
     restart: always
-#    network_mode: host
     ports:
       - 4000:4000
     depends_on:

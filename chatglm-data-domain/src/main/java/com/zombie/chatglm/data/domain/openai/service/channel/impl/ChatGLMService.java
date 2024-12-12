@@ -14,6 +14,7 @@ import okhttp3.sse.EventSource;
 import okhttp3.sse.EventSourceListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter;
 
@@ -34,8 +35,8 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class ChatGLMService implements OpenAiGroupService {
-    @Resource
-    protected OpenAiSession chatGlMOpenAiSession;
+    @Autowired(required = false)
+    protected OpenAiSession chatGLMOpenAiSession;
     @Timed(value = "chatglmmodel_domessage_response",description = "chatglm模型对话次数")
     @Override
     public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter) throws Exception {
@@ -54,7 +55,7 @@ public class ChatGLMService implements OpenAiGroupService {
         request.setPrompt(messages);
 
         //3.请求应答
-        chatGlMOpenAiSession.completions(request, new EventSourceListener() {
+        chatGLMOpenAiSession.completions(request, new EventSourceListener() {
             @Override
             public void onEvent(@NotNull EventSource eventSource, @Nullable String id, @Nullable String type, @NotNull String data) {
                 ChatCompletionResponse response = JSON.parseObject(data,ChatCompletionResponse.class);

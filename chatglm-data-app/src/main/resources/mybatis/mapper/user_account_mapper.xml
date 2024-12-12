@@ -14,6 +14,16 @@
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
     </resultMap>
+    <insert id="insert" parameterType="com.zombie.chatglm.data.infrastructure.po.UserAccountPO">
+        INSERT INTO user_account(
+            openid, total_quota, surplus_quota, model_types, status,
+            create_time, update_time
+        )
+        VALUES(
+                  #{openid}, #{totalQuota}, #{surplusQuota}, #{modelTypes}, #{status},
+                  now(), now()
+        )
+    </insert>
     <update id="addAccountQuota" parameterType="com.zombie.chatglm.data.infrastructure.po.UserAccountPO">
         UPDATE user_account SET
         total_quota = total_quota + #{totalQuota},

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,12 +52,17 @@ public class NoPayNotifyOrderJob {
                 //查询支付宝数据库的订单结果
                 AlipayTradeQueryRequest request = new AlipayTradeQueryRequest();
                 AlipayTradeQueryModel model = new AlipayTradeQueryModel();
+                // 设置查询选项
+                List<String> queryOptions = new ArrayList<String>();
+                queryOptions.add("trade_settle_info");
                 model.setOutTradeNo(orderId);
+                model.setQueryOptions(queryOptions);
                 request.setBizModel(model);
                 AlipayTradeQueryResponse response = alipayClient.execute(request);
                 //交易单号数据
                 String tradeStatus = response.getTradeStatus();
-                log.info("支付回调失败补偿任务查询数据:orderId:{},tradeStatus:{}",orderId,tradeStatus);
+                String body = response.getBody();
+                log.info("支付回调失败补偿任务查询数据:orderId:{},tradeStatus:{}",orderId,body);
                 //确认支付宝端交易状态为成功后，更新订单
                 if(tradeStatus.equals("TRADE_SUCCESS")){
                     String transactionId = response.getTradeNo();

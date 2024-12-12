@@ -4,6 +4,7 @@ import com.google.common.cache.Cache;
 import com.zombie.chatglm.data.domain.weixin.model.entity.MessageTextEntity;
 import com.zombie.chatglm.data.domain.weixin.model.entity.UserBehaviorMessageEntity;
 import com.zombie.chatglm.data.domain.weixin.model.valobj.MsgTypeVO;
+import com.zombie.chatglm.data.domain.weixin.repository.IWeiXinRepository;
 import com.zombie.chatglm.data.domain.weixin.service.IWeiXinBehaviorService;
 import com.zombie.chatglm.data.types.exception.ChatGLMException;
 import com.zombie.chatglm.data.types.sdk.weixin.XmlUtil;
@@ -20,9 +21,12 @@ public class WeiXinBehaviorService implements IWeiXinBehaviorService {
     @Value("${wx.config.originalid}")
     private String originalId;
 
+    //原先功能被替换为redis，暂不使用
+//    @Resource
+//    private Cache<String,String> codeCache;
 
     @Resource
-    private Cache<String,String> codeCache;
+    private IWeiXinRepository weiXinRepository;
 
     @Override
     public String acceptUserBehavior(UserBehaviorMessageEntity entity) {
@@ -33,17 +37,8 @@ public class WeiXinBehaviorService implements IWeiXinBehaviorService {
 
         // Text 文本类型
         if(MsgTypeVO.TEXT.getCode().equals(entity.getMsgType())){
-            //缓存验证码
-            String isExistCode = codeCache.getIfPresent(entity.getOpenId());
-
-            // 判断验证码 - 不考虑验证码重复问题
-            if(StringUtils.isBlank(isExistCode)){
-                //创建验证码
-                String code = RandomStringUtils.randomNumeric(4);
-                codeCache.put(code, entity.getOpenId());
-                codeCache.put(entity.getOpenId(), code);
-                isExistCode = code;
-            }
+            //生成验证码
+            String code = weiXinRepository.genCode(entity.getOpenId());
 
             //反馈信息[文本]
             MessageTextEntity res = new MessageTextEntity();
@@ -51,7 +46,7 @@ public class WeiXinBehaviorService implements IWeiXinBehaviorService {
             res.setFromUserName(originalId);
             res.setCreateTime(String.valueOf(System.currentTimeMillis() / 1000L));
             res.setMsgType("text");
-            res.setContent(String.format("您的验证码为：%s 有效期%d分钟！", isExistCode, 3));
+            res.setContent(String.format("您的验证码为：%s 有效期%d分钟！", code, 3));
             return XmlUtil.beanToXml(res);
         }
 

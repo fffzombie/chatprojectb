@@ -1,848 +1,178 @@
-24-10-07.09:33:47.805 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 27076 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
-24-10-07.09:33:47.808 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-10-07.09:33:49.308 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
-24-10-07.09:33:49.317 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
-24-10-07.09:33:49.317 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-10-07.09:33:49.317 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-10-07.09:33:49.463 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-10-07.09:33:49.463 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1609 ms
-24-10-07.09:33:51.185 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
-24-10-07.09:33:51.214 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
-24-10-07.09:33:51.237 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
-24-10-07.09:33:51.252 [main            ] INFO  Application            - Started Application in 4.196 seconds (JVM running for 6.732)
-24-10-07.09:33:51.731 [RMI TCP Connection(1)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-10-07.09:33:51.957 [RMI TCP Connection(1)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-10-07.09:33:54.122 [RMI TCP Connection(3)-172.30.64.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-10-07.09:33:54.122 [RMI TCP Connection(3)-172.30.64.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-24-10-07.09:33:54.123 [RMI TCP Connection(3)-172.30.64.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
-24-10-07.09:40:00.057 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.09:40:00.061 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.09:50:00.010 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.09:50:00.012 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:00:00.016 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.10:00:00.018 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:10:00.006 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.10:10:00.008 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:18:28.191 [http-nio-80-exec-2] INFO  ChatAIServiceController - 流式问答请求开始，使用模型：gpt-3.5-turbo 请求信息：[{"content":"java","role":"user"}]
-24-10-07.10:18:28.359 [http-nio-80-exec-2] INFO  ChatAIServiceController - 流式问答请求处理，openid:zombie 请求模型:gpt-3.5-turbo
-24-10-07.10:18:28.399 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - --> POST https://pro-share-aws-api.zcyai.com/v1/chat/completions
-24-10-07.10:18:28.399 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Content-Type: application/json; charset=utf-8
-24-10-07.10:18:28.399 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Content-Length: 150
-24-10-07.10:18:28.399 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - apiKey: sk-yjG4T0L479h8GjcU156aFb93D9D54dF7BfC8CbF1683cDdEb
-24-10-07.10:18:28.399 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Accept: text/event-stream
-24-10-07.10:18:28.399 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - 
-24-10-07.10:18:28.400 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - {"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"java"}],"temperature":0.0,"stream":true,"frequency_penalty":0.0,"presence_penalty":0.0}
-24-10-07.10:18:28.400 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - --> END POST (150-byte body)
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - <-- 200 https://pro-share-aws-api.zcyai.com/v1/chat/completions (2795ms)
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - content-type: text/event-stream
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - cache-control: no-cache
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-oneapi-request-id: 2024100710183177636462746276014
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - date: Mon, 07 Oct 2024 02:18:32 GMT
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-cache: Miss from cloudfront
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - via: 1.1 00f15858fe834669190055c9acd78f46.cloudfront.net (CloudFront)
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-amz-cf-pop: SIN2-P5
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - alt-svc: h3=":443"; ma=86400
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-amz-cf-id: O029I7YcQEBOb8GAjyAlMUj5-Mjb4JBLAfKWO8OuSXkS8mkGcJimcQ==
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-xss-protection: 1; mode=block
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-frame-options: SAMEORIGIN
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - referrer-policy: strict-origin-when-cross-origin
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-content-type-options: nosniff
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - strict-transport-security: max-age=31536000
-24-10-07.10:18:31.195 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - vary: Origin
-24-10-07.10:18:32.358 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - 
-24-10-07.10:18:32.358 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"Java"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" is"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" a"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" high"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"-level"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" object"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"-oriented"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" programming"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" language"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" developed"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" by"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Sun"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Microsystems"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"."},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" It"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" is"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" popular"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" for"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" its"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" platform"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" independence"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" allowing"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" programs"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" written"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" in"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Java"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" to"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" run"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" on"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" any"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" operating"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" system"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" that"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" has"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" a"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Java"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Virtual"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Machine"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" ("},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"J"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"VM"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":")."},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" Java"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" is"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" commonly"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" used"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" for"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" developing"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" web"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" applications"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" mobile"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" applications"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" desktop"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" applications"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" and"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" enterprise"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" software"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"."},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" It"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" is"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" known"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" for"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" its"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" simplicity"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" readability"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":","},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" and"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":" maintain"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"ability"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"."},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFXcOunwcuxaQGspgEYw4YctUnLlB","object":"chat.completion.chunk","created":1728267512,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop"}]}
-
-data: [DONE]
-
-
-24-10-07.10:18:32.359 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - <-- END HTTP (19794-byte body)
-24-10-07.10:18:33.578 [http-nio-80-exec-5] INFO  AbstractChatService    - 流式问答请求完成，使用模型：gpt-3.5-turbo
-24-10-07.10:20:00.006 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:20:00.007 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.10:30:00.009 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:30:00.010 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.10:38:57.964 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-10-07.10:38:57.969 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-10-07.10:39:29.724 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 10324 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
-24-10-07.10:39:29.725 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-10-07.10:39:30.817 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
-24-10-07.10:39:30.824 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
-24-10-07.10:39:30.824 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-10-07.10:39:30.825 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-10-07.10:39:30.947 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-10-07.10:39:30.947 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1194 ms
-24-10-07.10:39:32.342 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
-24-10-07.10:39:32.371 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
-24-10-07.10:39:32.386 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
-24-10-07.10:39:32.399 [main            ] INFO  Application            - Started Application in 3.054 seconds (JVM running for 4.896)
-24-10-07.10:39:32.644 [RMI TCP Connection(1)-172.30.64.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-10-07.10:39:32.644 [RMI TCP Connection(1)-172.30.64.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-24-10-07.10:39:32.645 [RMI TCP Connection(1)-172.30.64.1] INFO  DispatcherServlet      - Completed initialization in 0 ms
-24-10-07.10:39:35.024 [RMI TCP Connection(3)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-10-07.10:39:35.184 [RMI TCP Connection(3)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-10-07.10:40:00.039 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:40:00.043 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.10:40:48.847 [http-nio-80-exec-6] INFO  SalesController        - 用户商品下单，根据商品ID创建支付单开始 openid:zombie productId:1001
-24-10-07.10:40:48.855 [http-nio-80-exec-6] INFO  OrderService           - orderEntity.orderTime:Mon Oct 07 10:40:48 CST 2024
-24-10-07.10:40:49.075 [http-nio-80-exec-6] INFO  AbstractOrderService   - 创建订单-完成，生成支付单。openid: zombie orderId: 834408483436 payUrl: <form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=W9uQUTZs4JzQ2DoVRPylgsodM7MJv1R8B0tXGf2fksVQN5J%2FxgCYIL1pasFtoLFJFPUKmzfPQ3ME4H%2B7hh2nGb8K1YMf1O%2FkoIGMBwX82g0%2BBJsKIV370KkaKmvpr2dd8qEYQm%2B1IbyXeo4yKOr0jqUHPJ0De%2FJknD6srUl9FOeEBTRWAP4Agnu%2FaBnrOwxYQ3FjoD5TR7KFzw0DlzUtlZKlGI6pCnyi4EivkuXt4oe0YtldPlFc0RDouk%2BPiGauUso7KAaK%2FZAUFjJ49cOYqY%2B7BvUzNZni0Vh81o2UX5b7N%2FzjoGkkab4V7sMF7%2FiRrCjygI2Xp8uEA%2FkZS9et2Q%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Fzombie.nat300.top%2Fapi%2Fv1%2Fsale%2Fpay_notify&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07+10%3A40%3A49&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
-<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;834408483436&quot;,&quot;total_amount&quot;:&quot;2.00&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;timeout_express&quot;:&quot;30m&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
-<input type="submit" value="立即支付" style="display:none" >
-</form>
-<script>document.forms[0].submit();</script>
-24-10-07.10:40:49.075 [http-nio-80-exec-6] INFO  SalesController        - 用户商品下单，根据商品ID创建支付单完成 openid: zombie productId: 1001 orderPay: PayOrderEntity{openid='zombie', orderId='834408483436', payUrl='<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=W9uQUTZs4JzQ2DoVRPylgsodM7MJv1R8B0tXGf2fksVQN5J%2FxgCYIL1pasFtoLFJFPUKmzfPQ3ME4H%2B7hh2nGb8K1YMf1O%2FkoIGMBwX82g0%2BBJsKIV370KkaKmvpr2dd8qEYQm%2B1IbyXeo4yKOr0jqUHPJ0De%2FJknD6srUl9FOeEBTRWAP4Agnu%2FaBnrOwxYQ3FjoD5TR7KFzw0DlzUtlZKlGI6pCnyi4EivkuXt4oe0YtldPlFc0RDouk%2BPiGauUso7KAaK%2FZAUFjJ49cOYqY%2B7BvUzNZni0Vh81o2UX5b7N%2FzjoGkkab4V7sMF7%2FiRrCjygI2Xp8uEA%2FkZS9et2Q%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Fzombie.nat300.top%2Fapi%2Fv1%2Fsale%2Fpay_notify&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07+10%3A40%3A49&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
-<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;834408483436&quot;,&quot;total_amount&quot;:&quot;2.00&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;timeout_express&quot;:&quot;30m&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
-<input type="submit" value="立即支付" style="display:none" >
-</form>
-<script>document.forms[0].submit();</script>', payStatus=0: 等待支付}
-24-10-07.10:41:33.550 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-10-07.10:41:33.559 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-10-07.10:43:57.612 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 15920 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
-24-10-07.10:43:57.614 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-10-07.10:43:58.776 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
-24-10-07.10:43:58.784 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
-24-10-07.10:43:58.784 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-10-07.10:43:58.784 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-10-07.10:43:58.908 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-10-07.10:43:58.909 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1266 ms
-24-10-07.10:44:00.369 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
-24-10-07.10:44:00.399 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
-24-10-07.10:44:00.413 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
-24-10-07.10:44:00.427 [main            ] INFO  Application            - Started Application in 3.21 seconds (JVM running for 5.115)
-24-10-07.10:44:00.608 [http-nio-80-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-10-07.10:44:00.608 [http-nio-80-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-24-10-07.10:44:00.609 [http-nio-80-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
-24-10-07.10:44:00.637 [RMI TCP Connection(1)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-10-07.10:44:00.814 [RMI TCP Connection(1)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-10-07.10:44:25.989 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-10-07.10:44:25.994 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-10-07.10:44:35.794 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 22960 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
-24-10-07.10:44:35.796 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-10-07.10:44:36.882 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
-24-10-07.10:44:36.889 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
-24-10-07.10:44:36.890 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-10-07.10:44:36.890 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-10-07.10:44:37.010 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-10-07.10:44:37.010 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1186 ms
-24-10-07.10:44:38.395 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
-24-10-07.10:44:38.422 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
-24-10-07.10:44:38.436 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
-24-10-07.10:44:38.450 [main            ] INFO  Application            - Started Application in 3.044 seconds (JVM running for 4.844)
-24-10-07.10:44:38.709 [RMI TCP Connection(1)-172.30.64.1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-10-07.10:44:38.709 [RMI TCP Connection(1)-172.30.64.1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-24-10-07.10:44:38.710 [RMI TCP Connection(1)-172.30.64.1] INFO  DispatcherServlet      - Completed initialization in 1 ms
-24-10-07.10:44:41.027 [RMI TCP Connection(3)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-10-07.10:44:41.171 [RMI TCP Connection(3)-172.30.64.1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-10-07.10:45:00.052 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.10:48:01.104 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 10:48:01^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=xF6QPId1SCMW4dgIso0VEXElC5BqjOh3+jLcgwU2TpgbB0HFn2jHosXTzIWupwQd8l/RYSuMxmhPwaEs+48qT/TOGtcfU64fAEfP+X0fcBMGXE+jIfuRd5Zfp+RiQHj+Z6i3uVfLZa0fRn+ih1uHF93JbPn//Ug2lRaruw484d7LmexKCrWg2DwQpbXyo5/+OyNJQclwHMuDk7IV1Azcq7cnHSli1sWrpKKyHYwiuRhUv9jN84t2msc8QtPTOFbg9x/Qsqrisef6sc4Lid8YSfcL0TExMLkpEFeIZYL+jI4g+n/aN7iKwBzulVtEj9hZXzPw1Wpn9lMv7R4ycLJIZQ==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 10:48:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0602fdb6172826928216345647914&biz_content={"out_trade_no":"834408483436"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^22ms,1041ms,21ms^_^trace_id:0602fdb6172826928216345647914
-24-10-07.10:48:01.104 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:834408483436,tradeStatus:null
-24-10-07.10:48:01.105 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+24-11-28.11:47:03.524 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 15316 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
+24-11-28.11:47:03.527 [main            ] INFO  Application            - The following 1 profile is active: "prod"
+24-11-28.11:47:04.440 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-11-28.11:47:04.442 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-11-28.11:47:04.482 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
+24-11-28.11:47:05.169 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
+24-11-28.11:47:05.176 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
+24-11-28.11:47:05.177 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-11-28.11:47:05.177 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-11-28.11:47:05.325 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-11-28.11:47:05.325 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1765 ms
+24-11-28.11:47:05.720 [main            ] INFO  Version                - Redisson 3.23.4
+24-11-28.11:47:10.235 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+24-11-28.11:47:10.237 [main            ] INFO  StandardService        - Stopping service [Tomcat]
+24-11-28.11:47:10.250 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+24-11-28.11:47:10.270 [main            ] ERROR SpringApplication      - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
+	at com.zombie.chatglm.data.Application.main(Application.java:20)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 17 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 31 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 45 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
+	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
+	... 61 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
+	... 77 common frames omitted
+Caused by: org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at org.redisson.client.RedisClient.lambda$resolveAddr$0(RedisClient.java:207)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
+	at io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:110)
+	at io.netty.resolver.InetSocketAddressResolver$1.operationComplete(InetSocketAddressResolver.java:62)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
+	at io.netty.resolver.dns.DnsNameResolver.tryFailure(DnsNameResolver.java:1025)
+	at io.netty.resolver.dns.DnsNameResolver.access$400(DnsNameResolver.java:93)
+	at io.netty.resolver.dns.DnsNameResolver$6.operationComplete(DnsNameResolver.java:1045)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
+	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1096)
+	at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1035)
+	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:422)
+	at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1006)
+	at io.netty.resolver.dns.DnsResolveContext.access$800(DnsResolveContext.java:66)
+	at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:497)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
+	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
+	at io.netty.resolver.dns.DnsQueryContext.trySuccess(DnsQueryContext.java:232)
+	at io.netty.resolver.dns.DnsQueryContext.finish(DnsQueryContext.java:224)
+	at io.netty.resolver.dns.DnsNameResolver$DnsResponseHandler.channelRead(DnsNameResolver.java:1364)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:97)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.lang.Thread.run(Thread.java:750)
-24-10-07.10:50:00.007 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.10:50:00.009 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.10:51:00.805 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 10:51:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=MZT9caEC0VLB/eQTGYmSD4jPrPaI1HKt59mfTTpOsMJ4oVxATJd0QF/nRJFNrPE/v79vkYRqgGgEkSsgz1xTXLTE1NrZ4nlyqNY+CTRy9QMbm2B3W4eDnIsVTuDXrWl0xdyLU+JRqwRLjSrtk08rNeHm0spGLW1bqlLGTKYHOkvRTgosbsUu+OA/wSFtMv7ge5Mtinrkf3K+amaAadPj44HALwX5a3ujVp2gQa+GpMwrS7iFYVqtnP8OlVwqqD03OnLjlHhgv2PG39RwJRS6077wCOcobT7kpJuG3yw75oDkSp3Vu5uCj4onv19Ch+MXD4Z5uNOHPxhYo6NHX38tNA==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 10:51:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=06021bf3172826946199012138052&biz_content={"out_trade_no":"834408483436"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^8ms,769ms,9ms^_^trace_id:06021bf3172826946199012138052
-24-10-07.10:51:00.805 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:834408483436,tradeStatus:null
-24-10-07.10:51:00.805 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.10:54:00.545 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 10:54:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=rfHcGK7jG51IUiNAZguPMOaC0nwbvll/32fPJBXMNFsthR4gqtyT/dQEDJIVUdFfkCUWo3J9ufX+TLZJ9QxxKiS7BGD85h2D01eTYMRzGQml9nhn9Wui4Fnnp1zJ6PLJ2/bWLzp9Gvnh0Xv2x9tCVZ8eN89D/P7r9zG/GTnd26/5xm7dVwWqS9F1XJUaifZOHRqL62HnoB0zQA5lbz9dX6qH2awcruhmTkYKqaf2Yh3BdmLEOXSw+8BePzSkIuRHNQx1HxoOLo1rvPjGAfOUDIt4QMMi+kNmJShFQyP5OqJIsQNxG4yXi3PWjOvWiIhWVbyOgQEygKPAaA+UCUEQuA==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 10:54:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0602fdb6172826964196758077914&biz_content={"out_trade_no":"834408483436"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^10ms,522ms,10ms^_^trace_id:0602fdb6172826964196758077914
-24-10-07.10:54:00.545 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:834408483436,tradeStatus:null
-24-10-07.10:54:00.545 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.10:57:00.840 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 10:57:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=xmY0xTs2Vyve7qtEKp95Vlb04z8kzh267jA3urYbig0BmPVxgb4gdtWqijBT56zt2AJtyNAF3nyQ8lrLuLpY/7f9/bEdv7xf0FRn8GU5HKrvekIGE0bTcfBePObjB04NiGv6cnW5lE83Ay3GIQE3yNYDudIZWMjlbBGr955qXIDVSUkCphEffLm4TRm8Hm/DUP04QCy0FgeP4kBE5NkFOg+k5bke25zOhW6eEoeCYZi1qZaWJI2okCg2SPX64n4RhuOFPDKhZwi8lHP8JtzPdhfYspmapp/Hm7xSb70s6bgMCBkrZgwoz2ardDAOdcMNfXFAzCf/ZsPJ8XsrchjMog==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 10:57:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=06037901172826982205156748103&biz_content={"out_trade_no":"834408483436"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^8ms,819ms,10ms^_^trace_id:06037901172826982205156748103
-24-10-07.10:57:00.840 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:834408483436,tradeStatus:null
-24-10-07.10:57:00.840 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.10:57:26.000 [http-nio-80-exec-2] INFO  SalesController        - 用户商品下单，根据商品ID创建支付单开始 openid:zombie productId:1001
-24-10-07.10:57:26.006 [http-nio-80-exec-2] INFO  OrderService           - orderEntity.orderTime:Mon Oct 07 10:57:26 CST 2024
-24-10-07.10:57:26.079 [http-nio-80-exec-2] INFO  AbstractOrderService   - 创建订单-完成，生成支付单。openid: zombie orderId: 182942347257 payUrl: <form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=OZPibv4JyVoSNGbDahaEiGXaGLS0VuYlsRSsDxRPxawhcO64TMRQpwdXL5WH1lGPOz3EW2rCu5L3uj7rXkqXsnkK%2B%2BeZQTCL7%2FuNxOMFQ6VWVldCIMP%2BkX%2B3jDm9BSkQcE5LxusVG9bA5bdNkPYPKl731sKHHxjgoGNfMVGXk3TwWsHNhcLr8PAbrBd7pTE8%2BXJgqgM%2B0qVsCvS8aMWIvGWG28aPCiD4ksrPkl%2BzotyncTy%2FyoFEzbPc16MaJUbEBQCQOEI2zLf8sfsPFW4fSUagaseCGfM6eHk2%2F2RGZjraHiw1koUP%2FBLvn5ppbR%2BPCN0NfjpbJbvM0kQKsWGZ4Q%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Fzombie.nat300.top%2Fapi%2Fv1%2Fsale%2Fpay_notify&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07+10%3A57%3A26&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
-<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;182942347257&quot;,&quot;total_amount&quot;:&quot;2.00&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;timeout_express&quot;:&quot;30m&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
-<input type="submit" value="立即支付" style="display:none" >
-</form>
-<script>document.forms[0].submit();</script>
-24-10-07.10:57:26.079 [http-nio-80-exec-2] INFO  SalesController        - 用户商品下单，根据商品ID创建支付单完成 openid: zombie productId: 1001 orderPay: PayOrderEntity{openid='zombie', orderId='182942347257', payUrl='<form name="punchout_form" method="post" action="https://openapi-sandbox.dl.alipaydev.com/gateway.do?charset=utf-8&method=alipay.trade.page.pay&sign=OZPibv4JyVoSNGbDahaEiGXaGLS0VuYlsRSsDxRPxawhcO64TMRQpwdXL5WH1lGPOz3EW2rCu5L3uj7rXkqXsnkK%2B%2BeZQTCL7%2FuNxOMFQ6VWVldCIMP%2BkX%2B3jDm9BSkQcE5LxusVG9bA5bdNkPYPKl731sKHHxjgoGNfMVGXk3TwWsHNhcLr8PAbrBd7pTE8%2BXJgqgM%2B0qVsCvS8aMWIvGWG28aPCiD4ksrPkl%2BzotyncTy%2FyoFEzbPc16MaJUbEBQCQOEI2zLf8sfsPFW4fSUagaseCGfM6eHk2%2F2RGZjraHiw1koUP%2FBLvn5ppbR%2BPCN0NfjpbJbvM0kQKsWGZ4Q%3D%3D&return_url=https%3A%2F%2Fgaga.plus&notify_url=http%3A%2F%2Fzombie.nat300.top%2Fapi%2Fv1%2Fsale%2Fpay_notify&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07+10%3A57%3A26&alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json">
-<input type="hidden" name="biz_content" value="{&quot;out_trade_no&quot;:&quot;182942347257&quot;,&quot;total_amount&quot;:&quot;2.00&quot;,&quot;subject&quot;:&quot;测试商品&quot;,&quot;timeout_express&quot;:&quot;30m&quot;,&quot;product_code&quot;:&quot;FAST_INSTANT_TRADE_PAY&quot;}">
-<input type="submit" value="立即支付" style="display:none" >
-</form>
-<script>document.forms[0].submit();</script>', payStatus=0: 等待支付}
-24-10-07.11:00:00.010 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.11:00:00.011 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.11:00:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:03:00.601 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:03:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=nZyJ5+LAM+kdEGF17NV8aQnvuG33glXONy5ojItEL2Zuq6MsvvtQnH7x9CJb2dujHWt4RHGD4VIDa2sqQTGU9dNbOn5ppVyuJZq89SBerFWFBG+ga4i0FaE0xBEfx29D5ZsLQkfG//P1soXH4DEcNYLVFTeEZYngmF1ojOMWxbTLGF7Sz5OZ89s+GPuTl8kcbNl5ngnxtPHltyAdynU+S3EwXtjmt3dokL9QSPzOhLSWhhbMgufLcKqTeqC72SwhcnO0YqgRAgMq6Oee8Zm3wBR440OjoQqzBkucfwM9FQNl/wJPPsa80Iiqrq87BcI3oeEBnc6uEymtzWER1/H+TA==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:03:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0602fdb6172827018202976107914&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^9ms,576ms,9ms^_^trace_id:0602fdb6172827018202976107914
-24-10-07.11:03:00.601 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:03:00.601 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:06:00.839 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:06:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=vKDBJnVxT/RKkRQ9F3O4KoeRZsgXL77OyAsO8gkeiJianwlogKwvbGWlUwLCFqplrdDUMbAOhNcvQ7vbd4MvdvzMTeShHHeuWUjrzdSeaBHEp0vkgEGkNTNVchVlQYCQZ6FJCfEYz3YwEDzMUuxDiDvZWu6CEI6UNABvoLq62+sy7kUJgFkh/Ti2lEJVEXim9PBlQXxBj8VIi2rF5ZjHvNrye+fYEfQhCcYHZxqBLh8E3Ca9yMDZBEFpz965dTrNRqzeMSZSHuvTZ7sRbXehz8NWpYMoihXWTscF37AmoN4z2gEWLf65QARN00FU0JJ8Un+T/aGXHWAJ+6i+Gk7spg==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:06:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0600bf5a172827036200538638611&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^8ms,810ms,9ms^_^trace_id:0600bf5a172827036200538638611
-24-10-07.11:06:00.839 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:06:00.839 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:09:00.927 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:09:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=rm+b35Omo0PkA5u8YpjmS7bu1dNnqcexqHDXasWFZdXEPcx3YAf9kTNaoTBFnuYr2PgCzClmo8KfUSMxb8iopYR+48mbawnukuOx/EbsKU5087Efq9eBifuhYg6uT3lJA6Qn7jTy4cN0ypc+ltWCSxJmihvEK4zWtbMvONZhVkAdUTfAU2MDRMNHgYVpz849NIfCBSgrZ6EOZJ3viir21z0v2vOeHCYOjUuG8+2zWQwKYeCrS56n8Ui7xyDOXC/goY8WGovroqKWsE7VSKieBnfaOz5nkBLukPAjC8FVQ0aKlJ9uBWqPfLatl8QtSrlqy2kWHSw25U4n0xcJ/35neg==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:09:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=060063f4172827054209032267958&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^8ms,897ms,9ms^_^trace_id:060063f4172827054209032267958
-24-10-07.11:09:00.927 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:09:00.927 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:10:00.006 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.11:10:00.008 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.11:12:00.658 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:12:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=dmFvpyS/HEJ6VDJ22RQWkFlGiC8C8DuaLHRt2SK5cXFQHudrVpP24cL+XQLSjJ0POap4CPaiMXB5clWXJdRXDkd0V0lUOhbVXErEwF6kQ2Hc5lo7XkxGv+HjV8F8i26WDX9d7e+wrnceISkPowquQK/UseYJDp7hwtMikYAs+e42XRSvYCXArEITGXiHlbsb7A/Vh+BQDq8Xz7uQ4FGK0sGbE13ulITmDYWFhs8TbX9K78NMZhBB5ST5QUvniSnBvXQC9A9JEI0gLJkTanrhqD6fuZxZUI34n060VsB1DqTbJkXLwl64hemb4focAkDq3Sgbk/EI85BJ2BD5a9p14g==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:12:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0600bf5a172827072212350698611&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^9ms,628ms,8ms^_^trace_id:0600bf5a172827072212350698611
-24-10-07.11:12:00.658 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:12:00.658 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:15:00.527 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:15:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=mA/xtouGv78IjMl73U9SUTAHmDVlcpzN3b2Yq9QhxYqIXgs+OqDHx/oHwXCqBoQ+7jiF7sjL3ewKSowI1qDADzhUYThgvL6vXritLy1PZZO2hZL0StZ21Lu3r0Z5A7B1BBJ11qjRtsZtH/Vr0iwMdSwx7tgm14fhFubcRTdP8WWuJGUtI7eyW7m49X+98PHCn9aGHiSUSYF/y+blROUfvszo4NmZPdwPGR8qpBs5rBGJk829TSBW7rEnXK7Lco0MebwwoFhKiWdtsQ+jIKxQGPrjoMoggvwvRx8OhXvL/lFYAaPrO50e4NozvF7kt8sO3wq7jmnd6jr0OtoWs64G2g==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:15:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0600bf5a172827090192656588611&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^8ms,502ms,9ms^_^trace_id:0600bf5a172827090192656588611
-24-10-07.11:15:00.527 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:15:00.527 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:18:00.896 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:18:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=SAnfKfNtJVW4IzMjiU9WITSIYyhtI/7JJ/3JQc2NDUsBd5xx291UiqWAGQi5K9wXdo82OKp5Tp7Ftksp5E8nkm9CVixAWvTtufj2u8VD2dwPeJ15iRaPVXwbi5pNSIQ3UQyXfPgcnGE0knu0DRVrKuyaxLxeapAhMl8R/Fqi4lTkAYiwPm1Z/ziKBHA4vpnjJEQZacsD1vLLZJ2qNNMxUcq7vTYuercqYtp6PSbx2Yw0OpeF4rNb6UbiqDTc4mJ+5KCQrAbc8TIujC6a7qobUlPGkQrt4T0rmNN509RtR9tveTZcgUfV7VjZxL16+/EIU0jytrOxpA7+B4XhhZ4VZA==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:18:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=060026e9172827108203027498830&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^9ms,872ms,9ms^_^trace_id:060026e9172827108203027498830
-24-10-07.11:18:00.896 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:18:00.896 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:20:00.013 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.11:20:00.014 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.11:21:00.476 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:21:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=PTMisbTxPimxxJW9ELoOvQEGni9IsK+nY8MMFyWZ0Li0GlEt8ZDz88vHWBdUE7AJFcppTVZbqwGgveDICHAXkFfbJtQA9eBH9X1vqz4GQyPai7iE0APMjz5qLt/4d1XXRyC8Z5it4Gy9e3gXjt7x8tFYIhpIki5PyCul1BWLSR4x+TqIkzeoRk9vsQNHvH5d/QyLAOMk23QcLPOmSishjk9QqvVfPciVw3SZbGrh6WH6Ix28oXr71xZSl8c6VaPn+VRAYq2fDW5nTl3sWYoNkO+KXW1LcUeAQ/TjUI1W7HcAqdGpqt0wDTbxMCjkOdK7Futv0yFDlWAZG/T3EVRVlQ==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:21:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=0600bf5a172827126191368758611&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^11ms,450ms,8ms^_^trace_id:0600bf5a172827126191368758611
-24-10-07.11:21:00.476 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:21:00.477 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:24:00.471 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:24:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=OE/uMRiFroq1TqlouXP5+8DJHtcoUYv8fywhglKF/x7puGQJswOKaBamdF+BfnNFu4lxom8qFbyUv/8mkUV5IBf+40xfei0J7BUNj3aY3nFF4w+siZCqNyEJyuGiRmColC7HtGnDLKHAmbgv0oNoIZpZDFI12ek5gFGTyqhzFl3gXnyiF+5WOlIz1B1tTndv71vvvz6adCY8yaikCGXzBkrmnVVUdN+ijkwOyVTWXs8du6+sRrax0kjkjsCw/M1aMLiT3pwYcAxVgLYMUBMOqtNNs7vE83FHCMR1n1VUQQ2ENJq581PlSxjMjo0KUPyyiU7jtqrEN4qIdZqb+/XWRg==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:24:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=060026e9172827144189039408830&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^9ms,447ms,9ms^_^trace_id:060026e9172827144189039408830
-24-10-07.11:24:00.471 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:24:00.471 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:27:00.986 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:27:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=neCIbGLkXkmSJ5oAGd7Gdjvd8GB+2tp/J3VtjB7v3F6gpdofC8GLTeyuivL468sURH5iUfs23mkKZV2D6htXnCWqREW/imII1VPNMxHsrHz3FNEj2P1SgdpiS7HDycQL00nzawcjW+lKInU08VYMcS17quDNsVX83yuTfDsYhZoB5moPTeSqh3axjXWe06w0eTlabJ3e2R3/HY/7acGmm9MtsbAUpFKCrdpBsTBfpJD9uf6PZ1eU7SlPRCfzUorvxHme6ROsVq9IfUPhg/mIV3l+Z699KXGrPiJqtzxNKfyX+SLwc2r3KZ8qdWoX12kpmCVSVRU/0c8ZEUkdjPyhEQ==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:27:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=060063f4172827162200168937958&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^9ms,961ms,10ms^_^trace_id:060063f4172827162200168937958
-24-10-07.11:27:00.986 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:27:00.986 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:30:00.823 [scheduling-1    ] ERROR err                    - ErrorScene^_^20000^_^aop.ACQ.SYSTEM_ERROR^_^null^_^Windows 10^_^2024-10-07 11:30:00^_^ProtocalMustParams:charset=utf-8&method=alipay.trade.query&sign=CCAJm3H69eQ0xdNtES8rW3MZpAkU2pfOrY2gF40A12k2gU90EUaHAz9ynpghY2uunHKkCDCDV6MCYiOKtrHv+FL0SdKB7OPhHIWbQa9oKyeiZZdMclyY97Yey+sZswdJbEf7gMIg3scpWi785XdmXCPyKGOyTvp2TbjiCCdoxrpGwBa/5MfMfmJuaCCvEY57bMvhv4JulnPikyZoS1k5tsmATILf2r4935OBY46w4b3vA1tVC3FsYDY15ieRJGpwhF8o1g27yR/EtTMsJF+ARTZg40WmVHzv4NW9xCmA4M7RiUsYTXHGXJa4/aaFq68yXHZTX24wj96YFN44xSo8DQ==&version=1.0&app_id=9021000141601223&sign_type=RSA2&timestamp=2024-10-07 11:30:00^_^ProtocalOptParams:alipay_sdk=alipay-sdk-java-4.38.157.ALL&format=json^_^ApplicationParams:traceId=06037901172827180191044078103&biz_content={"out_trade_no":"182942347257"}^_^Body:{"alipay_trade_query_response":{"msg":"Service Currently Unavailable","code":"20000","sub_msg":"系统异常","sub_code":"aop.ACQ.SYSTEM_ERROR","receipt_amount":"0.00","point_amount":"0.00","buyer_pay_amount":"0.00","invoice_amount":"0.00"},"sign":"ZebDN6GiwJYotALSK6c5YE/ziXNyW7dfh49m6P11AFLFgjMdaH4VyA6mhS5AGh1UXmgz+X7NAZt1WavmunD43/vMmI4W5TMhVLqlpCnfQlJaNkTGx+kKvFYCnZIYuQsdr4DIGyrEzWLraScVjig1WxLxibVy6L+p6hI6vHQvH0ZIhQR8P5JCON3eTcTA79QQzyIwGO3+gkjERRSrpVfcFCxQpUwtFmBmEldjsPSrbs5M2ZB4nnN+tVyptiLtxJ+/bVGw5yuW/vbR3IA5jNGm+iiEBSLfg/t6y2MVdHDzWCJCEtmzjGQJsNzDds3LbYo7deOvyqVgrqK9jrMR8oLy4w=="}^_^9ms,802ms,9ms^_^trace_id:06037901172827180191044078103
-24-10-07.11:30:00.824 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 支付回调失败补偿任务查询数据:orderId:182942347257,tradeStatus:null
-24-10-07.11:30:00.824 [scheduling-1    ] ERROR NoPayNotifyOrderJob    - 定时任务，订单支付状态更新失败
-java.lang.NullPointerException: null
-	at com.zombie.chatglm.data.trigger.job.NoPayNotifyOrderJob.exec(NoPayNotifyOrderJob.java:61)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:84)
-	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
-	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:95)
-	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
-	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
-	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at java.lang.Thread.run(Thread.java:750)
-24-10-07.11:30:00.831 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭 orderId: 182942347257 status：true
-24-10-07.11:30:00.832 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.11:33:00.008 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:36:00.008 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:39:00.005 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:40:00.012 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.11:40:00.013 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.11:42:00.003 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:45:00.003 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:48:00.015 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:50:00.011 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.11:50:00.012 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.11:51:00.009 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:54:00.004 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.11:57:00.007 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.12:00:00.002 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.12:00:00.003 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.12:00:00.004 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.12:03:00.011 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.12:03:58.401 [http-nio-80-exec-1] INFO  ChatAIServiceController - 流式问答请求开始，使用模型：gpt-3.5-turbo 请求信息：[{"content":"帮我写一个java的简介","role":"user"},{"content":"Java是一种面向对象的编程语言，由Sun Microsystems在1995年首次发布，目前由Oracle进行维护。它以“写一次，处处运行”（Write Once, Run Anywhere）的理念而著称，这意味着用Java编写的应用程序可以在不同的平台上运行，而无需进行修改。
-
-Java的设计初衷是为了实现跨平台功能，因此它采用了Java虚拟机（JVM）作为核心。当Java程序被编译后，它生成字节码，字节码通过JVM在不同的操作系统上运行，为程序的跨平台性提供了坚实的基础。
-
-Java的主要特点包括：
-
-1. **平台无关性**：Java程序可以在任何安装了JVM的设备上运行，极大地提高了软件的可移植性。
-   
-2. **面向对象**：Java是一种严格的面向对象编程语言，支持封装、继承和多态等面向对象的特性。
-
-3. **丰富的标准库**：Java提供了一个强大的标准库，包括构建用户界面、处理输入输出、网络编程、数据结构等，帮助开发者快速构建功能全面的应用。
-
-4. **安全性**：Java具有很高的安全性，通过字节码验证和安全管理器等机制，可以有效防止不安全的操作，特别是在网络环境中。
-
-5. **多线程支持**：Java内置对多线程编程的支持，简化了并发程序的开发。
-
-Java广泛应用于企业级应用开发、移动应用（特别是Android开发）、大数据技术以及网络编程等领域。其稳定性、可维护性以及广泛的社区支持，使其成为世界上最受欢迎的编程语言之一。","role":"system"},{"content":"你好","role":"user"}]
-24-10-07.12:03:58.407 [http-nio-80-exec-1] INFO  ChatAIServiceController - 流式问答请求处理，openid:zombie 请求模型:gpt-3.5-turbo
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 维护
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 台
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 台
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 码
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 码
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 操
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 统
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 台
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 础
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 台
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.486 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 用户
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 网络
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 开发
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 码
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 操
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 网络
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 开发
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 开发
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 移动
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 开发
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 网络
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 维护
-24-10-07.12:03:58.487 [http-nio-80-exec-1] INFO  SensitiveWordConfig    - 检测到敏感词: 性
-24-10-07.12:03:58.540 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - --> POST https://pro-share-aws-api.zcyai.com/v1/chat/completions
-24-10-07.12:03:58.540 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Content-Type: application/json; charset=utf-8
-24-10-07.12:03:58.540 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Content-Length: 1834
-24-10-07.12:03:58.540 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - apiKey: sk-yjG4T0L479h8GjcU156aFb93D9D54dF7BfC8CbF1683cDdEb
-24-10-07.12:03:58.541 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Accept: text/event-stream
-24-10-07.12:03:58.541 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - 
-24-10-07.12:03:58.542 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - {"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"帮我写一个java的简介"},{"role":"system","content":"Java是一种面向对象的编程语言，由Sun Microsystems在1995年首次发布，目前由Oracle进行维护。它以“写一次，处处运行”（Write Once, Run Anywhere）的理念而著称，这意味着用Java编写的应用程序可以在不同的平台上运行，而无需进行修改。\n\nJava的设计初衷是为了实现跨平台功能，因此它采用了Java虚拟机（JVM）作为核心。当Java程序被编译后，它生成字节码，字节码通过JVM在不同的操作系统上运行，为程序的跨平台性提供了坚实的基础。\n\nJava的主要特点包括：\n\n1. **平台无关性**：Java程序可以在任何安装了JVM的设备上运行，极大地提高了软件的可移植性。\n   \n2. **面向对象**：Java是一种严格的面向对象编程语言，支持封装、继承和多态等面向对象的特性。\n\n3. **丰富的标准库**：Java提供了一个强大的标准库，包括构建用户界面、处理输入输出、网络编程、数据结构等，帮助开发者快速构建功能全面的应用。\n\n4. **安全性**：Java具有很高的安全性，通过字节码验证和安全管理器等机制，可以有效防止不安全的操作，特别是在网络环境中。\n\n5. **多线程支持**：Java内置对多线程编程的支持，简化了并发程序的开发。\n\nJava广泛应用于企业级应用开发、移动应用（特别是Android开发）、大数据技术以及网络编程等领域。其稳定性、可维护性以及广泛的社区支持，使其成为世界上最受欢迎的编程语言之一。"},{"role":"user","content":"你好"}],"temperature":0.0,"stream":true,"frequency_penalty":0.0,"presence_penalty":0.0}
-24-10-07.12:03:58.542 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - --> END POST (1834-byte body)
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - <-- 200 https://pro-share-aws-api.zcyai.com/v1/chat/completions (3227ms)
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - content-type: text/event-stream
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - cache-control: no-cache
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-oneapi-request-id: 2024100712040220111746757781469
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - date: Mon, 07 Oct 2024 04:04:03 GMT
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-cache: Miss from cloudfront
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - via: 1.1 00f15858fe834669190055c9acd78f46.cloudfront.net (CloudFront)
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-amz-cf-pop: SIN2-P5
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - alt-svc: h3=":443"; ma=86400
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-amz-cf-id: kpRlIos4jgIaXYdZcPWABfZLcNWUZJwK-84q6y4A6V-3Y-SOF5Un7g==
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-xss-protection: 1; mode=block
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-frame-options: SAMEORIGIN
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - referrer-policy: strict-origin-when-cross-origin
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-content-type-options: nosniff
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - strict-transport-security: max-age=31536000
-24-10-07.12:04:01.770 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - vary: Origin
-24-10-07.12:04:02.200 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - 
-24-10-07.12:04:02.200 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"你"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"好"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"！"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"有"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"什"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"么"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"可以"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"帮"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"助"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"你"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"的"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"吗"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"？"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"如果"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"有"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"任"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"何"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"问题"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"或"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"需"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"求"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"，请"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"随"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"时"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"告"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"诉"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"我"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"。"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZGUybERJOvYmRrDE3jg0D7aMq1R","object":"chat.completion.chunk","created":1728273842,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop"}]}
-
-data: [DONE]
-
-
-24-10-07.12:04:02.200 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - <-- END HTTP (7559-byte body)
-24-10-07.12:04:02.706 [http-nio-80-exec-3] INFO  AbstractChatService    - 流式问答请求完成，使用模型：gpt-3.5-turbo
-24-10-07.12:04:36.969 [http-nio-80-exec-9] INFO  ChatAIServiceController - 流式问答请求开始，使用模型：gpt-3.5-turbo 请求信息：[{"content":"你好","role":"user"},{"content":"你好！有什么可以帮助你的吗？如果有任何问题或需求，请随时告诉我。","role":"system"},{"content":"你好","role":"user"}]
-24-10-07.12:04:36.970 [http-nio-80-exec-9] INFO  ChatAIServiceController - 流式问答请求处理，openid:zombie 请求模型:gpt-3.5-turbo
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - --> POST https://pro-share-aws-api.zcyai.com/v1/chat/completions
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Content-Type: application/json; charset=utf-8
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Content-Length: 314
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - apiKey: sk-yjG4T0L479h8GjcU156aFb93D9D54dF7BfC8CbF1683cDdEb
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - Accept: text/event-stream
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - 
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - {"model":"gpt-3.5-turbo","messages":[{"role":"user","content":"你好"},{"role":"system","content":"你好！有什么可以帮助你的吗？如果有任何问题或需求，请随时告诉我。"},{"role":"user","content":"你好"}],"temperature":0.0,"stream":true,"frequency_penalty":0.0,"presence_penalty":0.0}
-24-10-07.12:04:36.984 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - --> END POST (314-byte body)
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - <-- 200 https://pro-share-aws-api.zcyai.com/v1/chat/completions (875ms)
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - content-type: text/event-stream
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - cache-control: no-cache
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-oneapi-request-id: 2024100712043874657070571780681
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - date: Mon, 07 Oct 2024 04:04:39 GMT
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-cache: Miss from cloudfront
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - via: 1.1 00f15858fe834669190055c9acd78f46.cloudfront.net (CloudFront)
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-amz-cf-pop: SIN2-P5
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - alt-svc: h3=":443"; ma=86400
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-amz-cf-id: zs7lAqafSFKuutSvMd8sP7uEvLV6VS5C0u5-dWu2O2niGo1WOQAIEw==
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-xss-protection: 1; mode=block
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-frame-options: SAMEORIGIN
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - referrer-policy: strict-origin-when-cross-origin
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - x-content-type-options: nosniff
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - strict-transport-security: max-age=31536000
-24-10-07.12:04:37.859 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - vary: Origin
-24-10-07.12:04:38.285 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - 
-24-10-07.12:04:38.285 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"role":"assistant","content":""},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"你"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"好"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"！"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"欢"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"迎"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"光"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"临"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"！"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"你"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"需要"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"我"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"帮"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"你"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"解"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"决"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"什"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"么"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"问题"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"吗"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{"content":"？"},"logprobs":null,"finish_reason":null}]}
-
-data: {"id":"chatcmpl-AFZH5zEiiEirEiSn3hANrsmXzka8X","object":"chat.completion.chunk","created":1728273879,"model":"gpt-3.5-turbo-0125","system_fingerprint":null,"choices":[{"index":0,"delta":{},"logprobs":null,"finish_reason":"stop"}]}
-
-data: [DONE]
-
-
-24-10-07.12:04:38.285 [OkHttp https://pro-share-aws-api.zcyai.com/...] INFO  OkHttpClient           - <-- END HTTP (5545-byte body)
-24-10-07.12:04:38.605 [http-nio-80-exec-7] INFO  AbstractChatService    - 流式问答请求完成，使用模型：gpt-3.5-turbo
-24-10-07.12:05:20.706 [http-nio-80-exec-3] INFO  SalesController        - 商品查询 [{"available":false,"price":2.00,"productDesc":"测试商品请勿下单","productId":1001,"productName":"测试商品","quota":30},{"available":false,"price":5.00,"productDesc":"测试商品请勿下单","productId":1002,"productName":"测试商品2","quota":40}]
-24-10-07.12:06:00.005 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.12:09:00.007 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.12:10:00.016 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.12:10:00.018 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.12:12:00.002 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.12:14:24.101 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
-24-10-07.12:14:24.107 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
-24-10-07.14:41:48.630 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 18636 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
-24-10-07.14:41:48.632 [main            ] INFO  Application            - The following 1 profile is active: "dev"
-24-10-07.14:41:49.897 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
-24-10-07.14:41:49.905 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
-24-10-07.14:41:49.905 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-10-07.14:41:49.905 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-10-07.14:41:50.041 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-10-07.14:41:50.041 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1379 ms
-24-10-07.14:41:51.578 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
-24-10-07.14:41:51.605 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
-24-10-07.14:41:51.625 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
-24-10-07.14:41:51.639 [main            ] INFO  Application            - Started Application in 3.455 seconds (JVM running for 5.458)
-24-10-07.14:41:51.952 [RMI TCP Connection(1)-169.254.229.111] INFO  HikariDataSource       - HikariPool-1 - Starting...
-24-10-07.14:41:52.170 [RMI TCP Connection(1)-169.254.229.111] INFO  HikariDataSource       - HikariPool-1 - Start completed.
-24-10-07.14:41:54.350 [RMI TCP Connection(3)-169.254.229.111] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
-24-10-07.14:41:54.350 [RMI TCP Connection(3)-169.254.229.111] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
-24-10-07.14:41:54.351 [RMI TCP Connection(3)-169.254.229.111] INFO  DispatcherServlet      - Completed initialization in 1 ms
-24-10-07.14:42:00.046 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.14:45:00.004 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.14:48:00.008 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.14:50:00.015 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.14:50:00.020 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.14:51:00.014 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.14:54:00.017 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.14:57:00.016 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.15:00:00.006 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
-24-10-07.15:00:00.007 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
-24-10-07.15:00:00.008 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.15:03:00.017 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.15:06:00.003 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
-24-10-07.15:09:00.014 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+Caused by: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
+	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1088)
+	... 35 common frames omitted

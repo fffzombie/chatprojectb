@@ -1,1 +1,1 @@
-docker build -f ./Dockerfile -t zombie_chatglm-data-app:1.0 .
+docker build -f ./Dockerfile -t zombie_chat-data-app:1.2 .
