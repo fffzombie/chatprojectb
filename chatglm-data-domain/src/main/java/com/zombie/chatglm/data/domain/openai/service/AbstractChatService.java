@@ -4,7 +4,6 @@ import com.zombie.chatglm.data.domain.openai.service.channel.OpenAiGroupService;
 import com.zombie.chatglm.data.domain.openai.service.channel.impl.ChatGLMService;
 import com.zombie.chatglm.data.domain.openai.service.channel.impl.ChatGPTService;
 import com.zombie.chatglm.data.types.enums.OpenAiChannel;
-import com.zombie.chatglm.session.OpenAiSession;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
 import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;

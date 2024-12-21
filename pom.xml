@@ -124,7 +124,7 @@
             <!--    chatglm-sdk-java        -->
             <dependency>
                 <groupId>com.zombie</groupId>
-                <artifactId>chatglm-sdk-java-mod</artifactId>
+                <artifactId>chatglm-sdk-java</artifactId>
                 <version>1.0</version>
             </dependency>
 

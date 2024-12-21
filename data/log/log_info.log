@@ -1,178 +1,128 @@
-24-11-28.11:47:03.524 [main            ] INFO  Application            - Starting Application using Java 1.8.0_392 on XANTARES with PID 15316 (D:\PROGRAMING\JAVAPROJECTS\END\chatglm\chatglm-data-app\target\classes started by fff_zombie in D:\PROGRAMING\JAVAPROJECTS\END\chatglm)
-24-11-28.11:47:03.527 [main            ] INFO  Application            - The following 1 profile is active: "prod"
-24-11-28.11:47:04.440 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
-24-11-28.11:47:04.442 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-24-11-28.11:47:04.482 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 27 ms. Found 0 Redis repository interfaces.
-24-11-28.11:47:05.169 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 8091 (http)
-24-11-28.11:47:05.176 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-8091"]
-24-11-28.11:47:05.177 [main            ] INFO  StandardService        - Starting service [Tomcat]
-24-11-28.11:47:05.177 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
-24-11-28.11:47:05.325 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
-24-11-28.11:47:05.325 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1765 ms
-24-11-28.11:47:05.720 [main            ] INFO  Version                - Redisson 3.23.4
-24-11-28.11:47:10.235 [main            ] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-24-11-28.11:47:10.237 [main            ] INFO  StandardService        - Stopping service [Tomcat]
-24-11-28.11:47:10.250 [main            ] INFO  ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-24-11-28.11:47:10.270 [main            ] ERROR SpringApplication      - Application run failed
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authController': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920)
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147)
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731)
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303)
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292)
-	at com.zombie.chatglm.data.Application.main(Application.java:20)
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
-	... 17 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'authRepository': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
-	... 31 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonService': Injection of resource dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:332)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391)
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:544)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
-	... 45 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'redissonClient' defined in class path resource [com/zombie/chatglm/data/config/RedisClientConfig.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:658)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:638)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1352)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1195)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.resolveBeanByName(AbstractAutowireCapableBeanFactory.java:479)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.autowireResource(CommonAnnotationBeanPostProcessor.java:550)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.getResource(CommonAnnotationBeanPostProcessor.java:520)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor$ResourceElement.getResourceToInject(CommonAnnotationBeanPostProcessor.java:673)
-	at org.springframework.beans.factory.annotation.InjectionMetadata$InjectedElement.inject(InjectionMetadata.java:228)
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
-	at org.springframework.context.annotation.CommonAnnotationBeanPostProcessor.postProcessProperties(CommonAnnotationBeanPostProcessor.java:329)
-	... 61 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.redisson.api.RedissonClient]: Factory method 'redissonClient' threw exception; nested exception is org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
-	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653)
-	... 77 common frames omitted
-Caused by: org.redisson.client.RedisConnectionException: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at org.redisson.client.RedisClient.lambda$resolveAddr$0(RedisClient.java:207)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-	at io.netty.util.concurrent.DefaultPromise.setFailure(DefaultPromise.java:110)
-	at io.netty.resolver.InetSocketAddressResolver$1.operationComplete(InetSocketAddressResolver.java:62)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-	at io.netty.resolver.dns.DnsNameResolver.tryFailure(DnsNameResolver.java:1025)
-	at io.netty.resolver.dns.DnsNameResolver.access$400(DnsNameResolver.java:93)
-	at io.netty.resolver.dns.DnsNameResolver$6.operationComplete(DnsNameResolver.java:1045)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
-	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
-	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1096)
-	at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1035)
-	at io.netty.resolver.dns.DnsResolveContext.query(DnsResolveContext.java:422)
-	at io.netty.resolver.dns.DnsResolveContext.tryToFinishResolve(DnsResolveContext.java:1006)
-	at io.netty.resolver.dns.DnsResolveContext.access$800(DnsResolveContext.java:66)
-	at io.netty.resolver.dns.DnsResolveContext$2.operationComplete(DnsResolveContext.java:497)
-	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners0(DefaultPromise.java:583)
-	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:559)
-	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
-	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
-	at io.netty.util.concurrent.DefaultPromise.setSuccess0(DefaultPromise.java:625)
-	at io.netty.util.concurrent.DefaultPromise.trySuccess(DefaultPromise.java:105)
-	at io.netty.resolver.dns.DnsQueryContext.trySuccess(DnsQueryContext.java:232)
-	at io.netty.resolver.dns.DnsQueryContext.finish(DnsQueryContext.java:224)
-	at io.netty.resolver.dns.DnsNameResolver$DnsResponseHandler.channelRead(DnsNameResolver.java:1364)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
-	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
-	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412)
-	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440)
-	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420)
-	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
-	at io.netty.channel.nio.AbstractNioMessageChannel$NioMessageUnsafe.read(AbstractNioMessageChannel.java:97)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
-	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
-	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
-	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
-	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
-	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
-	at java.lang.Thread.run(Thread.java:750)
-Caused by: java.net.UnknownHostException: Failed to resolve 'redis' [A(1)] after 2 queries 
-	at io.netty.resolver.dns.DnsResolveContext.finishResolve(DnsResolveContext.java:1088)
-	... 35 common frames omitted
+24-12-13.18:58:36.675 [main            ] INFO  Application            - Starting Application using Java 1.8.0_212 on WINDOWS-MAG7GS7 with PID 2756 (G:\DEVPROJECTS\JAVAPROJECTS\chatglm-data\chatglm-data-app\target\classes started by fff_zombie in G:\DEVPROJECTS\JAVAPROJECTS\chatglm-data)
+24-12-13.18:58:36.687 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-13.18:58:38.447 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-13.18:58:38.449 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-13.18:58:38.517 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 0 Redis repository interfaces.
+24-12-13.18:58:39.734 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
+24-12-13.18:58:39.743 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
+24-12-13.18:58:39.743 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-13.18:58:39.743 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-13.18:58:39.927 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-13.18:58:39.928 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3161 ms
+24-12-13.18:58:40.466 [main            ] INFO  Version                - Redisson 3.23.4
+24-12-13.18:58:40.850 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-12-13.18:58:40.865 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-12-13.18:58:43.582 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
+24-12-13.18:58:43.645 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
+24-12-13.18:58:43.666 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
+24-12-13.18:58:43.686 [main            ] INFO  Application            - Started Application in 7.67 seconds (JVM running for 8.717)
+24-12-13.18:58:47.193 [http-nio-80-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-13.18:58:47.193 [http-nio-80-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-13.18:58:47.194 [http-nio-80-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-13.18:58:47.249 [http-nio-80-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-13.18:58:47.674 [http-nio-80-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-13.18:59:25.052 [http-nio-80-exec-5] INFO  AuthController         - 生成验证码开始，用户ID: zombie
+24-12-13.18:59:25.298 [http-nio-80-exec-5] INFO  AuthController         - 生成验证码完成，用户ID: zombie 生成结果：您的验证码为：4449 有效期3分钟！
+24-12-13.19:00:00.258 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:00:00.270 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.19:00:00.275 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.19:03:00.013 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:06:00.015 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:09:00.007 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:10:00.005 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.19:10:00.006 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.19:12:00.004 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:15:00.006 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:18:00.013 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:20:00.005 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.19:20:00.006 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.19:21:00.006 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:24:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:27:00.010 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:30:00.005 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:30:00.006 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.19:30:00.007 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.19:33:00.010 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:36:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:39:00.014 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:40:00.006 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.19:40:00.008 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.19:42:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:45:00.016 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:48:00.015 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:50:00.003 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.19:50:00.003 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.19:51:00.003 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:54:00.008 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:57:00.001 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.19:57:17.701 [http-nio-80-exec-4] INFO  AuthController         - 生成验证码开始，用户ID: zombie
+24-12-13.19:57:17.716 [http-nio-80-exec-4] INFO  AuthController         - 生成验证码完成，用户ID: zombie 生成结果：您的验证码为：4449 有效期3分钟！
+24-12-13.19:57:44.402 [http-nio-80-exec-9] INFO  AuthController         - 生成验证码开始，用户ID: zombie
+24-12-13.19:57:44.417 [http-nio-80-exec-9] INFO  AuthController         - 生成验证码完成，用户ID: zombie 生成结果：您的验证码为：0631 有效期3分钟！
+24-12-13.20:00:00.013 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.20:00:00.014 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.20:00:00.015 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:00:01.507 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-13.20:00:01.511 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
+24-12-13.20:00:07.763 [main            ] INFO  Application            - Starting Application using Java 1.8.0_212 on WINDOWS-MAG7GS7 with PID 19288 (G:\DEVPROJECTS\JAVAPROJECTS\chatglm-data\chatglm-data-app\target\classes started by fff_zombie in G:\DEVPROJECTS\JAVAPROJECTS\chatglm-data)
+24-12-13.20:00:07.769 [main            ] INFO  Application            - The following 1 profile is active: "dev"
+24-12-13.20:00:08.671 [main            ] INFO  RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode
+24-12-13.20:00:08.673 [main            ] INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+24-12-13.20:00:08.724 [main            ] INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 38 ms. Found 0 Redis repository interfaces.
+24-12-13.20:00:09.425 [main            ] INFO  TomcatWebServer        - Tomcat initialized with port(s): 80 (http)
+24-12-13.20:00:09.433 [main            ] INFO  Http11NioProtocol      - Initializing ProtocolHandler ["http-nio-80"]
+24-12-13.20:00:09.433 [main            ] INFO  StandardService        - Starting service [Tomcat]
+24-12-13.20:00:09.433 [main            ] INFO  StandardEngine         - Starting Servlet engine: [Apache Tomcat/9.0.75]
+24-12-13.20:00:09.589 [main            ] INFO  [/]                    - Initializing Spring embedded WebApplicationContext
+24-12-13.20:00:09.589 [main            ] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1774 ms
+24-12-13.20:00:09.976 [main            ] INFO  Version                - Redisson 3.23.4
+24-12-13.20:00:10.292 [redisson-netty-2-4] INFO  MasterPubSubConnectionPool - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-12-13.20:00:10.305 [redisson-netty-2-13] INFO  MasterConnectionPool   - 5 connections initialized for 127.0.0.1/127.0.0.1:6379
+24-12-13.20:00:12.549 [main            ] INFO  EndpointLinksResolver  - Exposing 14 endpoint(s) beneath base path '/actuator'
+24-12-13.20:00:12.586 [main            ] INFO  Http11NioProtocol      - Starting ProtocolHandler ["http-nio-80"]
+24-12-13.20:00:12.596 [main            ] INFO  TomcatWebServer        - Tomcat started on port(s): 80 (http) with context path ''
+24-12-13.20:00:12.609 [main            ] INFO  Application            - Started Application in 5.283 seconds (JVM running for 5.988)
+24-12-13.20:00:15.589 [http-nio-80-exec-1] INFO  [/]                    - Initializing Spring DispatcherServlet 'dispatcherServlet'
+24-12-13.20:00:15.589 [http-nio-80-exec-1] INFO  DispatcherServlet      - Initializing Servlet 'dispatcherServlet'
+24-12-13.20:00:15.590 [http-nio-80-exec-1] INFO  DispatcherServlet      - Completed initialization in 1 ms
+24-12-13.20:00:15.628 [http-nio-80-exec-1] INFO  HikariDataSource       - HikariPool-1 - Starting...
+24-12-13.20:00:15.778 [http-nio-80-exec-1] INFO  HikariDataSource       - HikariPool-1 - Start completed.
+24-12-13.20:00:21.135 [http-nio-80-exec-2] INFO  AuthController         - 生成验证码开始，用户ID: zombie
+24-12-13.20:00:21.318 [http-nio-80-exec-2] INFO  AuthController         - 生成验证码完成，用户ID: zombie 生成结果：您的验证码为：7032 有效期3分钟！
+24-12-13.20:03:00.055 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:06:00.002 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:09:00.016 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:10:00.009 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.20:10:00.016 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.20:12:00.007 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:15:00.011 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:18:00.007 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:20:00.013 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.20:20:00.015 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.20:21:00.013 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:24:00.014 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:27:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:30:00.009 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.20:30:00.010 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:30:00.011 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.20:33:00.009 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:36:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:39:00.010 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:40:00.016 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.20:40:00.017 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.20:42:00.005 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:45:00.012 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:48:00.007 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:50:00.007 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.20:50:00.009 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.20:51:00.018 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:54:00.006 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.20:57:00.004 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.21:00:00.002 [scheduling-1    ] INFO  OrderReplenishmentJob  - 定时任务，订单补货不存在，查询 orderIds is null
+24-12-13.21:00:00.004 [scheduling-1    ] INFO  TimeoutCloseOrderJob   - 定时任务，超时30分钟订单关闭，暂无超时未支付订单 orderIds is null
+24-12-13.21:00:00.005 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.21:03:00.016 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.21:06:00.004 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.21:09:00.014 [scheduling-1    ] INFO  NoPayNotifyOrderJob    - 定时任务，订单支付状态更新，暂无未更新订单 orderId is null
+24-12-13.21:09:58.053 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown initiated...
+24-12-13.21:09:58.058 [SpringApplicationShutdownHook] INFO  HikariDataSource       - HikariPool-1 - Shutdown completed.
