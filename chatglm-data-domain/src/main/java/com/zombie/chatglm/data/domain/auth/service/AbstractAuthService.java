@@ -5,6 +5,7 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.zombie.chatglm.data.domain.auth.model.entity.AuthStateEntity;
 import com.zombie.chatglm.data.domain.auth.model.valobj.AuthTypeVO;
+import com.zombie.chatglm.data.domain.auth.repository.IAuthRepository;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
@@ -12,10 +13,11 @@ import io.jsonwebtoken.SignatureAlgorithm;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.codec.binary.Base64;
 
+import javax.annotation.Resource;
 import java.util.*;
 
 /**
- * @description 鉴权服务业务流程
+ * @description 鉴权服务标准业务流程
  */
 
 @Slf4j
@@ -42,15 +44,21 @@ public abstract class AbstractAuthService implements IAuthService{
             return authStateEntity;
         }
 
-        //3.获取token并返回
+        //3.获取token
         Map<String, Object> chaim = new HashMap<>();
         chaim.put("openId",authStateEntity.getOpenId());
         String token = encode(authStateEntity.getOpenId(),7 * 24 * 60 * 60 * 1000,chaim);
         authStateEntity.setToken(token);
+
+        //4.注册账号
+        this.registerIfNoAccount(authStateEntity.getOpenId());
+
         return authStateEntity;
     }
 
     protected abstract AuthStateEntity checkCode(String code);
+
+    protected abstract void registerIfNoAccount(String openId);
 
     /**
      * 这里就是产生jwt字符串的地方

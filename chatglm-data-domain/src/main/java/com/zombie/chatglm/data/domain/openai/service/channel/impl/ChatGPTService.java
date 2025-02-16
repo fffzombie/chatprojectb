@@ -62,6 +62,33 @@ public class ChatGPTService implements OpenAiGroupService {
                 .build();
 
         //3.请求应答
+//        chatGPTOpenAiSession.chatCompletions(chatCompletionRequest, new EventSourceListener() {
+//            @Override
+//            public void onEvent(@NotNull EventSource eventSource, @Nullable String id, @Nullable String type, @NotNull String data) {
+//                ChatCompletionResponse chatCompletionResponse = JSON.parseObject(data, ChatCompletionResponse.class);
+//                List<ChatChoice> choices = chatCompletionResponse.getChoices();
+//                for (ChatChoice choice : choices) {
+//                    Message delta = choice.getDelta();
+//                    if(Constants.Role.ASSISTANT.getCode().equals(delta.getRole())) continue;
+//
+//                    //应答完成
+//                    String finishReason = choice.getFinishReason();
+//                    if (StringUtils.isNoneBlank(finishReason) && "stop".equals(finishReason)) {
+//                        emitter.complete();
+//                        break;
+//                    }
+//
+//                    //返回消息
+//                    try {
+//                        //TODO 加入睡眠时间，否则会无法实现流式传输的视觉效果，待优化
+//                        Thread.sleep(10);
+//                        emitter.send(delta.getContent());
+//                    } catch (Exception e) {
+//                        throw new ChatGPTException(e.getMessage());
+//                    }
+//                }
+//            }
+//        });
         chatGPTOpenAiSession.chatCompletions(chatCompletionRequest, new EventSourceListener() {
             @Override
             public void onEvent(@NotNull EventSource eventSource, @Nullable String id, @Nullable String type, @NotNull String data) {
@@ -72,21 +99,29 @@ public class ChatGPTService implements OpenAiGroupService {
                     if(Constants.Role.ASSISTANT.getCode().equals(delta.getRole())) continue;
 
                     //应答完成
-                    String finishReason = choice.getFinishReason();
-                    if (StringUtils.isNoneBlank(finishReason) && "stop".equals(finishReason)) {
-                        emitter.complete();
-                        break;
-                    }
-
+//                    String finishReason = choice.getFinishReason();
+//                    if (StringUtils.isNoneBlank(finishReason) && "stop".equals(finishReason)) {
+//                        emitter.complete();
+//                        break;
+//                    }
                     //返回消息
                     try {
-                        //TODO 加入睡眠时间，否则会无法实现流式传输的视觉效果，待优化
-                        Thread.sleep(10);
                         emitter.send(delta.getContent());
                     } catch (Exception e) {
                         throw new ChatGPTException(e.getMessage());
                     }
                 }
+            }
+
+            @Override
+            public void onClosed(@NotNull EventSource eventSource) {
+                log.info("对话关闭");
+                emitter.complete();
+            }
+
+            @Override
+            public void onFailure(@NotNull EventSource eventSource, @Nullable Throwable t, @Nullable Response response) {
+                log.info("对话异常", t);
             }
         });
 

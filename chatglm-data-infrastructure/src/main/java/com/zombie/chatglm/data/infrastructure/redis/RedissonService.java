@@ -16,7 +16,7 @@ import java.time.Duration;
  * @Version 1.0
  */
 @Service("redissonService")
-public class RedissonService implements IRedisService{
+public class RedissonService implements IRedisService {
     @Resource
     private RedissonClient redissonClient;
 
@@ -29,6 +29,16 @@ public class RedissonService implements IRedisService{
     public <T> void setValue(String key, T value, long expired) {
         RBucket<T> bucket = redissonClient.getBucket(key);
         bucket.set(value, Duration.ofMillis(expired));
+    }
+
+    @Override
+    public <T> void setIfAbsent(String key, T value) {
+        redissonClient.<T>getBucket(key).setIfAbsent(value);
+    }
+
+    @Override
+    public <T> void setIfAbsent(String key, T value, long expired) {
+        redissonClient.<T>getBucket(key).setIfAbsent(value, Duration.ofMillis(expired));
     }
 
     public <T> T getValue(String key) {

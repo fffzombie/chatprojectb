@@ -6,7 +6,7 @@ import com.zombie.chatglm.data.domain.auth.service.IAuthService;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
 import com.zombie.chatglm.data.domain.openai.model.entity.MessageEntity;
 import com.zombie.chatglm.data.domain.openai.service.IChatService;
-import com.zombie.chatglm.data.trigger.http.dto.ChatGLMRequestDTO;
+import com.zombie.chatglm.data.trigger.http.dto.ChatAIRequestDTO;
 import com.zombie.chatglm.data.types.common.Constants;
 import com.zombie.chatglm.data.types.exception.ChatGLMException;
 import io.micrometer.core.annotation.Timed;
@@ -50,10 +50,10 @@ public class ChatAIServiceController {
      */
     @Timed(value = "chat_completions",description = "对话请求量")
     @RequestMapping(value = "chat/completions",method = RequestMethod.POST)
-    public ResponseBodyEmitter completionsStream(@RequestBody ChatGLMRequestDTO request,
+    public ResponseBodyEmitter completionsStream(@RequestBody ChatAIRequestDTO chatRequest,
                                                  @RequestHeader("Authorization") String token,
                                                  HttpServletResponse response){
-        log.info("流式问答请求开始，使用模型：{} 请求信息：{}", request.getModel(), JSON.toJSONString(request.getMessages()));
+        log.info("流式问答请求开始，使用模型：{} 请求信息：{}", chatRequest.getModel(), JSON.toJSONString(chatRequest.getMessages()));
         try{
             // 1. 基础配置；流式输出、编码、禁用缓存
             response.setContentType("text/event-stream");
@@ -75,13 +75,13 @@ public class ChatAIServiceController {
 
             //3.获取openid
             String openid = authService.openid(token);
-            log.info("流式问答请求处理，openid:{} 请求模型:{}", openid, request.getModel());
+            log.info("流式问答请求处理，openid:{} 请求模型:{}", openid, chatRequest.getModel());
 
             //4.构建参数
             ChatProcessAggregate chatProcessAggregate = ChatProcessAggregate.builder()
                     .openid(openid)
-                    .model(request.getModel())
-                    .messages(request.getMessages().stream()
+                    .model(chatRequest.getModel())
+                    .messages(chatRequest.getMessages().stream()
                             .map(entity -> MessageEntity.builder()
                                     .role(entity.getRole())
                                     .content(entity.getContent())
@@ -93,7 +93,7 @@ public class ChatAIServiceController {
             return chatService.completions(emitter,chatProcessAggregate);
 
         }catch (Exception e) {
-            log.error("流式应答，请求模型：{} 发生异常", request.getModel(), e);
+            log.error("流式应答，请求模型：{} 发生异常", chatRequest.getModel(), e);
             throw new ChatGLMException(e.getMessage());
         }
 

@@ -30,6 +30,23 @@ public interface IRedisService {
     <T> void setValue(String key, T value, long expired);
 
     /**
+     * 当不存在时设置指定 key 的值
+     *
+     * @param key     键
+     * @param value   值
+     */
+    <T> void setIfAbsent(String key, T value);
+
+    /**
+     * 当不存在时设置指定 key 的值
+     *
+     * @param key     键
+     * @param value   值
+     * @param expired 过期时间
+     */
+    <T> void setIfAbsent(String key, T value,long expired);
+
+    /**
      * 获取指定 key 的值
      *
      * @param key 键

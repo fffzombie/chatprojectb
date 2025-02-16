@@ -23,11 +23,28 @@ public class UserQuotaFilter implements ILogicFilter<UserAccountQuotaEntity> {
 
     @Resource
     private IOpenAiRepository openAiRepository;
+
     @Override
     public RuleLogicEntity<ChatProcessAggregate> filter(ChatProcessAggregate chatProcess, UserAccountQuotaEntity data) throws Exception {
-        if(data.getSurplusQuota() > 0){
+        //免费额度校验
+        Integer freeCount = openAiRepository.queryFreeCount(data.getOpenid());
+        if (freeCount == null) {
+            openAiRepository.setUserFreeCount(data.getOpenid(), 3);
+            openAiRepository.subUserFreeCount(data.getOpenid());
+            return RuleLogicEntity.<ChatProcessAggregate>builder()
+                    .type(LogicCheckTypeVO.SUCCESS).data(chatProcess).build();
+        }
+        if (freeCount > 0) {
+            openAiRepository.subUserFreeCount(data.getOpenid());
+            return RuleLogicEntity.<ChatProcessAggregate>builder()
+                    .type(LogicCheckTypeVO.SUCCESS).data(chatProcess).build();
+        }
+
+
+        //账户额度校验
+        if (data.getSurplusQuota() > 0) {
             int updateCount = openAiRepository.subAccountQuota(data.getOpenid());
-            if(0 != updateCount){
+            if (0 != updateCount) {
                 return RuleLogicEntity.<ChatProcessAggregate>builder()
                         .type(LogicCheckTypeVO.SUCCESS).data(chatProcess).build();
             }

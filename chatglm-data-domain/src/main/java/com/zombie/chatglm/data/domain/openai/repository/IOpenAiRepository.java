@@ -10,4 +10,10 @@ public interface IOpenAiRepository {
     UserAccountQuotaEntity queryUserAccount(String openid);
 
     int subAccountQuota(String openid);
+
+    Integer queryFreeCount(String openid);
+
+    void setUserFreeCount(String openid,Integer count);
+
+    void subUserFreeCount(String openid);
 }

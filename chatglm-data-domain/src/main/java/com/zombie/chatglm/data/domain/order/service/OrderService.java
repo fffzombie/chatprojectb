@@ -57,17 +57,17 @@ public class OrderService extends AbstractOrderService{
 
     @Override
     protected PayOrderEntity doPrepayOrder(String openid, String orderId, String productName, BigDecimal amountTotal){
-        //支付宝网页支付
+        //支付宝沙箱支付
         AlipayTradePagePayRequest request = new AlipayTradePagePayRequest();
 
         request.setNotifyUrl(notifyUrl);
         request.setReturnUrl(returnUrl);
 
         JSONObject bizContent = new JSONObject();
-        bizContent.put("out_trade_no", orderId);
-        bizContent.put("total_amount", amountTotal.toString());
-        bizContent.put("subject", productName);
-        bizContent.put("product_code", "FAST_INSTANT_TRADE_PAY");
+        bizContent.put("out_trade_no", orderId); // 我们自己生成的订单编号
+        bizContent.put("total_amount", amountTotal.toString()); // 订单的总金额
+        bizContent.put("subject", productName); // 支付的名称
+        bizContent.put("product_code", "FAST_INSTANT_TRADE_PAY"); // 固定配置
         //设置支付宝沙箱超时时间
         bizContent.put("timeout_express", "30m");
         request.setBizContent(bizContent.toString());

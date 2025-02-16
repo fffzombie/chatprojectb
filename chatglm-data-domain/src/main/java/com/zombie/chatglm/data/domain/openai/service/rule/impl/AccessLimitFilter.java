@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 
 @Slf4j
 @Component
-@LogicStrategy(logicMode = DefaultLogicFactory.LogicModel.ACCESS_LIMIT)
+//@LogicStrategy(logicMode = DefaultLogicFactory.LogicModel.ACCESS_LIMIT)
 public class AccessLimitFilter implements ILogicFilter<UserAccountQuotaEntity> {
 
     @Value("${app.config.limit-count:10}")
@@ -26,7 +26,6 @@ public class AccessLimitFilter implements ILogicFilter<UserAccountQuotaEntity> {
     private String whiteListStr;
     @Resource
     private Cache<String,Integer> visitCache;
-
 
     @Override
     public RuleLogicEntity<ChatProcessAggregate> filter(ChatProcessAggregate chatProcess,UserAccountQuotaEntity data) throws Exception {
@@ -43,7 +42,6 @@ public class AccessLimitFilter implements ILogicFilter<UserAccountQuotaEntity> {
         }
 
         String openid = chatProcess.getOpenid();
-
         //3.访问次数判断
         //如果缓存中没有找到该值，则会执行 () -> 0，这实际上是一个无参的 Lambda 表达式，它返回整数 0。
         int visitCount = visitCache.get(openid, () -> 0);

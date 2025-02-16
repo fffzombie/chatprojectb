@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ChatGLMRequestDTO {
+public class ChatAIRequestDTO {
     /** 默认模型 */
     private String model = ChatGLMModel.CHATGLM_TURBO.getCode();
 

@@ -14,4 +14,6 @@ public interface IAuthRepository {
 
     void removeCodeByOpenId(String code,String openId);
 
+    void registerAccount(String openId);
+
 }

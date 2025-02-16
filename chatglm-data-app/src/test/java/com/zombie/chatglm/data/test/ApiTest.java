@@ -123,7 +123,7 @@ public class ApiTest {
 
         // 入参；模型、请求信息
         ChatCompletionRequest request = new ChatCompletionRequest();
-        request.setModel(Model.GLM_3_TURBO); // GLM_3_5_TURBO、GLM_4
+        request.setModel(Model.GLM_4_FLASH); // GLM_3_5_TURBO、GLM_4
         request.setIsCompatible(false);
         // 24年1月发布的 glm-3-turbo、glm-4 支持函数、知识库、联网功能
         request.setTools(new ArrayList<ChatCompletionRequest.Tool>() {

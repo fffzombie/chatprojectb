@@ -26,7 +26,6 @@ public class AuthService extends AbstractAuthService{
     @Resource
     private IAuthRepository authRepository;
 
-
     @Override
     protected AuthStateEntity checkCode(String code) {
         //通过缓存获取验证码校验
@@ -48,6 +47,11 @@ public class AuthService extends AbstractAuthService{
                 .info(AuthTypeVO.A0000.getInfo())
                 .openId(openId)
                 .build();
+    }
+
+    @Override
+    protected void registerIfNoAccount(String openId) {
+        authRepository.registerAccount(openId);
     }
 
 

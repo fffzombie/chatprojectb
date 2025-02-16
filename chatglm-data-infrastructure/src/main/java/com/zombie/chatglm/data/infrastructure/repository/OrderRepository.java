@@ -12,6 +12,7 @@ import com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO;
 import com.zombie.chatglm.data.infrastructure.po.OpenAIProductPO;
 import com.zombie.chatglm.data.infrastructure.po.UserAccountPO;
 import com.zombie.chatglm.data.types.enums.OpenAIProductEnableModel;
+import com.zombie.chatglm.data.types.enums.OpenAIUserEnableModelTypes;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Isolation;
 import org.springframework.transaction.annotation.Propagation;
@@ -126,7 +127,7 @@ public class OrderRepository implements IOrderRepository {
             if (1 != addAccountQuotaCount) throw new RuntimeException("addAccountQuotaCount update count is not equal 1");
         }else {
             userAccountPOReq.setStatus(UserAccountStatusVO.AVAILABLE.getCode());
-            userAccountPOReq.setModelTypes("glm-3-turbo,glm-4,glm-4v,cogview-3,gpt-3.5-turbo,gpt-4,gpt-4o");
+            userAccountPOReq.setModelTypes(OpenAIUserEnableModelTypes.ALL.getCode());
             userAccountDao.insert(userAccountPOReq);
         }
     }
