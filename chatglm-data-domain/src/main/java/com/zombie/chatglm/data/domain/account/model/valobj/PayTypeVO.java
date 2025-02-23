@@ -1,4 +1,4 @@
-package com.zombie.chatglm.data.domain.order.model.valobj;
+package com.zombie.chatglm.data.domain.account.model.valobj;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,7 +10,7 @@ import lombok.Getter;
 @AllArgsConstructor
 public enum PayTypeVO {
 
-    ALIPAY_NATIVE(0, "支付宝支付"),
+    ALIPAY_NATIVE(0,"支付宝支付"),
             ;
 
     private final Integer code;

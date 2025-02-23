@@ -3,7 +3,7 @@ package com.zombie.chatglm.data.infrastructure.repository;
 import com.zombie.chatglm.data.domain.auth.repository.IAuthRepository;
 import com.zombie.chatglm.data.domain.openai.model.valobj.UserAccountStatusVO;
 import com.zombie.chatglm.data.infrastructure.dao.IUserAccountDao;
-import com.zombie.chatglm.data.infrastructure.po.UserAccountPO;
+import com.zombie.chatglm.data.infrastructure.po.mysql.UserAccountPO;
 import com.zombie.chatglm.data.infrastructure.redis.IRedisService;
 import com.zombie.chatglm.data.types.enums.OpenAIUserEnableModelTypes;
 import org.springframework.stereotype.Repository;

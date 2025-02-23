@@ -1,7 +1,6 @@
 package com.zombie.chatglm.data.infrastructure.dao;
 
-import com.zombie.chatglm.data.domain.order.model.entity.ProductEntity;
-import com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO;
+import com.zombie.chatglm.data.infrastructure.po.mysql.OpenAIOrderPO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -28,4 +27,7 @@ public interface IOpenAIOrderDao {
 
     List<String> queryReplenishmentOrder();
 
+    List<OpenAIOrderPO> queryAccountOrderList(Integer offset, Integer pageSize, String openid);
+
+    Integer queryAccountOrderCount(String openid);
 }

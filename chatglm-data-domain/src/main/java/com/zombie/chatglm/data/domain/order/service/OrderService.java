@@ -42,7 +42,7 @@ public class OrderService extends AbstractOrderService{
         log.info("orderEntity.orderTime:{}",orderEntity.getOrderTime());
         orderEntity.setOrderStatus(OrderStatusVO.CREATE);
         orderEntity.setTotalAmount(productEntity.getPrice());
-        orderEntity.setPayTypeVO(PayTypeVO.ALIPAY_SANDBOX);
+        orderEntity.setPayTypeVO(PayTypeVO.ALIPAY_NATIVE);
         // 聚合信息
         CreateOrderAggregate aggregate = CreateOrderAggregate.builder()
                 .openid(openid)

@@ -1,4 +1,4 @@
-package com.zombie.chatglm.data.infrastructure.po;
+package com.zombie.chatglm.data.infrastructure.po.mysql;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

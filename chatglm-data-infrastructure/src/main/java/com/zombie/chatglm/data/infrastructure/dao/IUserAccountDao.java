@@ -1,6 +1,6 @@
 package com.zombie.chatglm.data.infrastructure.dao;
 
-import com.zombie.chatglm.data.infrastructure.po.UserAccountPO;
+import com.zombie.chatglm.data.infrastructure.po.mysql.UserAccountPO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

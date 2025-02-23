@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zombie.chatglm.data.infrastructure.dao.IUserAccountDao">
 
-    <resultMap id="userAccountMap" type="com.zombie.chatglm.data.infrastructure.po.UserAccountPO">
+    <resultMap id="userAccountMap" type="com.zombie.chatglm.data.infrastructure.po.mysql.UserAccountPO">
         <id column="id" property="id"/>
         <result column="openid" property="openid"/>
         <result column="total_quota" property="totalQuota"/>
@@ -14,7 +14,7 @@
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
     </resultMap>
-    <insert id="insert" parameterType="com.zombie.chatglm.data.infrastructure.po.UserAccountPO">
+    <insert id="insert" parameterType="com.zombie.chatglm.data.infrastructure.po.mysql.UserAccountPO">
         INSERT INTO user_account(
             openid, total_quota, surplus_quota, model_types, status,
             create_time, update_time
@@ -24,7 +24,7 @@
                   now(), now()
         )
     </insert>
-    <update id="addAccountQuota" parameterType="com.zombie.chatglm.data.infrastructure.po.UserAccountPO">
+    <update id="addAccountQuota" parameterType="com.zombie.chatglm.data.infrastructure.po.mysql.UserAccountPO">
         UPDATE user_account SET
         total_quota = total_quota + #{totalQuota},
         surplus_quota = surplus_quota + #{surplusQuota},

@@ -64,16 +64,18 @@ public class NoPayNotifyOrderJob {
                 String body = response.getBody();
                 log.info("支付回调失败补偿任务查询数据:orderId:{},tradeStatus:{}",orderId,body);
                 //确认支付宝端交易状态为成功后，更新订单
-                if(tradeStatus.equals("TRADE_SUCCESS")){
-                    String transactionId = response.getTradeNo();
-                    String payAmount = response.getBuyerPayAmount();
-                    String payTime = dateFormat.format(response.getSendPayDate());
+                if(tradeStatus != null){
+                    if(tradeStatus.equals("TRADE_SUCCESS")){
+                        String transactionId = response.getTradeNo();
+                        String payAmount = response.getBuyerPayAmount();
+                        String payTime = dateFormat.format(response.getSendPayDate());
 
-                    //更新订单
-                    boolean success = orderService.changeOrderPaySuccess(orderId, transactionId, new BigDecimal(payAmount), dateFormat.parse(payTime));
-                    if(success){
-                        //发布消息
-                        eventBus.post(orderId);
+                        //更新订单
+                        boolean success = orderService.changeOrderPaySuccess(orderId, transactionId, new BigDecimal(payAmount), dateFormat.parse(payTime));
+                        if(success){
+                            //发布消息
+                            eventBus.post(orderId);
+                        }
                     }
                 }
             }

@@ -17,5 +17,5 @@ public class ChatAIRequestDTO {
     private String model = ChatGLMModel.CHATGLM_TURBO.getCode();
 
     /** 问题描述 */
-    private List<MessageEntity> messages;
+    private List<QuestMessageDTO> messages;
 }

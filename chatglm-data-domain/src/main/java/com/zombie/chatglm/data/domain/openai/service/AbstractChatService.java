@@ -45,10 +45,10 @@ public abstract class AbstractChatService implements IChatService {
                 log.info("流式问答请求完成，使用模型：{}", chatProcess.getModel());
             });
             emitter.onError(throwable -> {
-                // 判断是否是常见的连接中断异常
+                // 判断是否是业务的连接中断异常
                 if (throwable instanceof IOException) {
                     String message = throwable.getMessage();
-                    // 这里可以根据错误消息判断是否为常见的连接问题
+                    // 根据错误消息判断是否为业务的连接问题
                     if (message != null && (message.contains("你的主机中的软件中止了一个已建立的连接。"))) {
                         // 连接中断的异常，记录简短信息
                         log.info("流式问答请求被用户中止，使用模型：{}，连接中断: {}", chatProcess.getModel(), message);

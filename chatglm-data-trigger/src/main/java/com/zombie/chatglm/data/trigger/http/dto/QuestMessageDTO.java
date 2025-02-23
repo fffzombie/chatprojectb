@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class MessageEntity {
-
+public class QuestMessageDTO {
     private String role;
     private String content;
-//    private String name;
 }

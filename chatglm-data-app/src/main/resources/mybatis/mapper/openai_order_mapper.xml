@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.zombie.chatglm.data.infrastructure.dao.IOpenAIOrderDao">
-    <resultMap id="userAccountMap" type="com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO">
+    <resultMap id="userAccountMap" type="com.zombie.chatglm.data.infrastructure.po.mysql.OpenAIOrderPO">
         <id column="id" property="id"/>
         <result column="openid" property="openid"/>
         <result column="product_id" property="productId"/>
@@ -22,7 +22,7 @@
         <result column="create_time" property="createTime"/>
         <result column="update_time" property="updateTime"/>
     </resultMap>
-    <insert id="insert" parameterType="com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO">
+    <insert id="insert" parameterType="com.zombie.chatglm.data.infrastructure.po.mysql.OpenAIOrderPO">
         INSERT INTO openai_order(
             openid, product_id, product_name, product_quota, order_id,
             order_time, order_status, total_amount, pay_type, pay_status,
@@ -33,14 +33,14 @@
                   #{payTime}, now(), now()
               )
     </insert>
-    <update id="updateOrderPayInfo" parameterType="com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO">
+    <update id="updateOrderPayInfo" parameterType="com.zombie.chatglm.data.infrastructure.po.mysql.OpenAIOrderPO">
         UPDATE openai_order SET
         pay_url = #{payUrl},
         pay_status = #{payStatus},
         update_time = now()
         WHERE openid = #{openid} AND order_id = #{orderId}
     </update>
-    <update id="changeOrderPaySuccess" parameterType="com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO">
+    <update id="changeOrderPaySuccess" parameterType="com.zombie.chatglm.data.infrastructure.po.mysql.OpenAIOrderPO">
         UPDATE openai_order SET
         order_status = 1, pay_status = 1,
         pay_amount = #{payAmount},
@@ -61,7 +61,7 @@
         WHERE order_id = #{orderId} AND pay_status = 0
     </update>
 
-    <select id="queryUnpaidOrder" parameterType="com.zombie.chatglm.data.infrastructure.po.OpenAIOrderPO"
+    <select id="queryUnpaidOrder" parameterType="com.zombie.chatglm.data.infrastructure.po.mysql.OpenAIOrderPO"
             resultMap="userAccountMap">
         SELECT order_id, product_name, pay_url, pay_status, total_amount
         FROM openai_order
@@ -96,5 +96,34 @@
         WHERE order_status = 1 AND pay_status = 1 AND NOW() >= order_time + INTERVAL 3 MINUTE
         ORDER BY order_id ASC
         LIMIT 10
+    </select>
+    <select id="queryAccountOrderList" resultMap="userAccountMap">
+        SELECT id,
+               openid,
+               product_id,
+               product_name,
+               product_quota,
+               product_model_types,
+               order_id,
+               order_time,
+               order_status,
+               total_amount,
+               pay_type,
+               pay_url,
+               pay_amount,
+               transaction_id,
+               pay_status,
+               pay_time,
+               create_time,
+               update_time
+        FROM openai_order
+        WHERE openid = #{openid}
+        ORDER BY order_time DESC
+        LIMIT #{offset},#{pageSize}
+    </select>
+    <select id="queryAccountOrderCount" resultType="java.lang.Integer">
+        SELECT COUNT(*)
+        FROM openai_order
+        WHERE openid = #{openid}
     </select>
 </mapper>

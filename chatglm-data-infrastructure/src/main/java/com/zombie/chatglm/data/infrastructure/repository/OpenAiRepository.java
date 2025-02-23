@@ -4,7 +4,7 @@ import com.zombie.chatglm.data.domain.openai.model.entity.UserAccountQuotaEntity
 import com.zombie.chatglm.data.domain.openai.model.valobj.UserAccountStatusVO;
 import com.zombie.chatglm.data.domain.openai.repository.IOpenAiRepository;
 import com.zombie.chatglm.data.infrastructure.dao.IUserAccountDao;
-import com.zombie.chatglm.data.infrastructure.po.UserAccountPO;
+import com.zombie.chatglm.data.infrastructure.po.mysql.UserAccountPO;
 import com.zombie.chatglm.data.infrastructure.redis.IRedisService;
 import org.springframework.stereotype.Repository;
 
