@@ -11,7 +11,7 @@ import org.redisson.api.*;
  * @Create 2024/10/7 17:29
  * @Version 1.0
  */
-public interface IRedisService {
+public interface IRedisService{
     /**
      * 设置指定 key 的值
      *

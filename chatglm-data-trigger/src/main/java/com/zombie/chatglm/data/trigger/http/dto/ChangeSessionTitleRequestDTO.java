@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class QuestMessageDTO {
-    private String role;
-    private String content;
-    private Long sendTimeStamp;
+public class ChangeSessionTitleRequestDTO {
+
+    private String sessionId;
+
+    private String newTitle;
+
 }

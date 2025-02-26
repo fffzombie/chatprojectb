@@ -1,10 +1,12 @@
 package com.zombie.chatglm.data.domain.openai.service;
 
+import com.zombie.chatglm.data.domain.openai.model.event.ChatMessageEvent;
+import com.zombie.chatglm.data.domain.openai.model.valobj.SessionMessageVO;
 import com.zombie.chatglm.data.domain.openai.service.channel.OpenAiGroupService;
 import com.zombie.chatglm.data.domain.openai.service.channel.impl.ChatGLMService;
 import com.zombie.chatglm.data.domain.openai.service.channel.impl.ChatGPTService;
+import com.zombie.chatglm.data.types.enums.ChatMessageRole;
 import com.zombie.chatglm.data.types.enums.OpenAiChannel;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
 import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;
 import com.zombie.chatglm.data.domain.openai.model.entity.UserAccountQuotaEntity;
@@ -22,13 +24,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /*
- *  定义标准业务流程
+ *  定义标准业务方法
  *
  * */
 @Slf4j
 public abstract class AbstractChatService implements IChatService {
     @Resource
-    private IOpenAiRepository openAiRepository;
+    protected IOpenAiRepository openAiRepository;
+
 
     private final Map<OpenAiChannel, OpenAiGroupService> openAiGroup = new HashMap<>();
 
@@ -40,8 +43,23 @@ public abstract class AbstractChatService implements IChatService {
     @Override
     public ResponseBodyEmitter completions(ResponseBodyEmitter emitter, ChatProcessAggregate chatProcess) {
         try {
+            // 创建消息收集容器
+            StringBuilder fullResponse = new StringBuilder();
+            long respSendTime = System.currentTimeMillis();
             //1.请求应答
             emitter.onCompletion(() -> {
+                try {
+                    appendMessageToSession(ChatMessageEvent.builder()
+                            .sessionMessageVO(SessionMessageVO.builder()
+                                    .role(ChatMessageRole.AI)
+                                    .content(fullResponse.toString())
+                                    .sendTime(respSendTime)
+                                    .build())
+                            .chatProcess(chatProcess)
+                            .build());
+                } catch (Exception e) {
+                    log.error("写入AIResp错误" + e.getMessage());
+                }
                 log.info("流式问答请求完成，使用模型：{}", chatProcess.getModel());
             });
             emitter.onError(throwable -> {
@@ -69,18 +87,30 @@ public abstract class AbstractChatService implements IChatService {
             RuleLogicEntity<ChatProcessAggregate> ruleLogicEntity = this.doCheckLogic(chatProcess, userAccountQuotaEntity,
 //                    DefaultLogicFactory.LogicModel.ACCESS_LIMIT.getCode(),
                     DefaultLogicFactory.LogicModel.SENSITIVE_WORD.getCode(),
-                    null != userAccountQuotaEntity ? DefaultLogicFactory.LogicModel.ACCOUNT_STATUS.getCode() : DefaultLogicFactory.LogicModel.NULL.getCode(),
-                    null != userAccountQuotaEntity ? DefaultLogicFactory.LogicModel.MODEL_TYPE.getCode() : DefaultLogicFactory.LogicModel.NULL.getCode(),
-                    null != userAccountQuotaEntity ? DefaultLogicFactory.LogicModel.USER_QUOTA.getCode() : DefaultLogicFactory.LogicModel.NULL.getCode()
+                    DefaultLogicFactory.LogicModel.ACCOUNT_STATUS.getCode(),
+                    DefaultLogicFactory.LogicModel.MODEL_TYPE.getCode(),
+                    DefaultLogicFactory.LogicModel.USER_QUOTA.getCode()
             );
             if (!LogicCheckTypeVO.SUCCESS.equals(ruleLogicEntity.getType())) {
                 emitter.send(ruleLogicEntity.getInfo());
+                try {
+                    appendMessageToSession(ChatMessageEvent.builder()
+                            .sessionMessageVO(SessionMessageVO.builder()
+                                    .role(ChatMessageRole.AI)
+                                    .content(ruleLogicEntity.getInfo())
+                                    .sendTime(respSendTime)
+                                    .build())
+                            .chatProcess(chatProcess)
+                            .build());
+                } catch (Exception e) {
+                    log.error("写入AIResp错误" + e.getMessage());
+                }
+                log.info("流式问答请求完成，使用模型：{}", chatProcess.getModel());
                 emitter.complete();
                 return emitter;
             }
-
             //4.应答处理 【策略模式】
-            openAiGroup.get(chatProcess.getChannel()).doMessageResponse(chatProcess, emitter);
+            openAiGroup.get(chatProcess.getChannel()).doMessageResponse(chatProcess, emitter, fullResponse);
         } catch (Exception e) {
             throw new ChatGLMException(Constants.ResponseCode.UN_ERROR.getCode(), Constants.ResponseCode.UN_ERROR.getInfo());
         }

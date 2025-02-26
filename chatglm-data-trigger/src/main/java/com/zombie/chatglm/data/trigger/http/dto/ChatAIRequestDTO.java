@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.annotation.Nullable;
 import java.util.List;
 
 @Data
@@ -13,9 +14,19 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ChatAIRequestDTO {
-    /** 默认模型 */
-    private String model = ChatGLMModel.CHATGLM_TURBO.getCode();
+    /**
+     * 默认模型
+     */
+    private String model = ChatGLMModel.GLM_4_FLASH.getCode();
 
-    /** 问题描述 */
+    /**
+     * 问题描述
+     */
     private List<QuestMessageDTO> messages;
+
+    /**
+     * 会话ID
+     */
+    @Nullable
+    private String sessionId;
 }

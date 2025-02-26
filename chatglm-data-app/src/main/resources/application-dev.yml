@@ -85,6 +85,7 @@ wx:
 
 # 数据库配置；SpringBoot 默认连接池为 HikariDataSource
 spring:
+  #Mysql
   datasource:
     username: root
     password: 123456
@@ -100,6 +101,23 @@ spring:
     connection-timeout: 30000 #数据库连接超时时间,默认30秒，即30000
     connection-test-query: SELECT 1
   type: com.zaxxer.hikari.HikariDataSource
+  #MongoDB
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/chat_session_db
+  #RabbitMQ
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: admin  # 你设置的用户名
+    password: 123456  # 你设置的密码
+    virtual-host: /
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
 
 mybatis:
   mapper-locations: classpath:/mybatis/mapper/*.xml

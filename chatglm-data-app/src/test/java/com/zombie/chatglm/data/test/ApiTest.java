@@ -1,6 +1,5 @@
 package com.zombie.chatglm.data.test;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.zombie.chatglm.model.*;
 import com.zombie.chatglm.session.Configuration;
 import com.zombie.chatglm.session.OpenAiSession;
@@ -16,9 +15,13 @@ import okhttp3.sse.EventSourceListener;
 import org.jetbrains.annotations.Nullable;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.data.mongo.AutoConfigureDataMongo;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CountDownLatch;
 
@@ -29,9 +32,14 @@ import java.util.concurrent.CountDownLatch;
  * @Copyright 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
  */
 @Slf4j
+@SpringBootTest
+@AutoConfigureDataMongo
+@RunWith(SpringRunner.class)
 public class ApiTest {
 
     private OpenAiSession openAiSession;
+
+
 
     @Before
     public void test_OpenAiSessionFactory() {
@@ -362,6 +370,10 @@ public class ApiTest {
         for (Model value : values) {
 
         }
+    }
+    @Test
+    public void test_mongodb(){
+        System.out.println(System.currentTimeMillis());
     }
 
 

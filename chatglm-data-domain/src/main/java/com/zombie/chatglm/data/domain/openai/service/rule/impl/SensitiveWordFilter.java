@@ -3,10 +3,10 @@ package com.zombie.chatglm.data.domain.openai.service.rule.impl;
 import com.github.houbb.sensitive.word.bs.SensitiveWordBs;
 import com.zombie.chatglm.data.domain.openai.annotation.LogicStrategy;
 import com.zombie.chatglm.data.domain.openai.model.aggregates.ChatProcessAggregate;
-import com.zombie.chatglm.data.domain.openai.model.entity.MessageEntity;
 import com.zombie.chatglm.data.domain.openai.model.entity.RuleLogicEntity;
 import com.zombie.chatglm.data.domain.openai.model.entity.UserAccountQuotaEntity;
 import com.zombie.chatglm.data.domain.openai.model.valobj.LogicCheckTypeVO;
+import com.zombie.chatglm.data.domain.openai.model.valobj.SessionMessageVO;
 import com.zombie.chatglm.data.domain.openai.service.rule.ILogicFilter;
 import com.zombie.chatglm.data.domain.openai.service.rule.factory.DefaultLogicFactory;
 import lombok.extern.slf4j.Slf4j;
@@ -43,13 +43,15 @@ public class SensitiveWordFilter implements ILogicFilter<UserAccountQuotaEntity>
         newChatProcessAggregate.setOpenid(chatProcess.getOpenid());
         newChatProcessAggregate.setModel(chatProcess.getModel());
 
-        List<MessageEntity> newMessages = chatProcess.getMessages().stream()
+        List<SessionMessageVO> newMessages = chatProcess.getMessages().stream()
                 .map(message -> {
                     String content = message.getContent();
                     String replace = words.replace(content);
-                    return MessageEntity.builder()
+                    Long sendTime = message.getSendTime();
+                    return SessionMessageVO.builder()
                             .role(message.getRole())
                             .content(replace)
+                            .sendTime(sendTime)
                             .build();
                 })
                 .collect(Collectors.toList());

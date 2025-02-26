@@ -11,5 +11,5 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyEmitter
  * @Version 1.0
  */
 public interface OpenAiGroupService {
-    void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter) throws Exception;
+    void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter,StringBuilder fullResponse) throws Exception;
 }

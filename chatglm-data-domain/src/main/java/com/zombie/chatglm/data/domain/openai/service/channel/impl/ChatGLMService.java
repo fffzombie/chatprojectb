@@ -44,12 +44,12 @@ public class ChatGLMService implements OpenAiGroupService {
 
     @Timed(value = "chatglmmodel_domessage_response", description = "chatglm模型对话次数")
     @Override
-    public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter) throws Exception {
+    public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter,StringBuilder fullResponse) throws Exception {
         //1.请求消息
         List<ChatCompletionRequest.Prompt> messages = chatProcessAggregate.getMessages().stream()
-                .map(entity -> ChatCompletionRequest.Prompt.builder()
-                        .role(entity.getRole())
-                        .content(entity.getContent())
+                .map(sessionMessageVO -> ChatCompletionRequest.Prompt.builder()
+                        .role(sessionMessageVO.getRole().getCode())
+                        .content(sessionMessageVO.getContent())
                         .build())
                 .collect(Collectors.toList());
 
@@ -73,6 +73,7 @@ public class ChatGLMService implements OpenAiGroupService {
                 try {
                     if (response.getData() != null && EventType.add.getCode().equals(type)) {
                         emitter.send(response.getData());
+                        fullResponse.append(response.getData());
                     }
                 } catch (IOException e) {
                     //用户中断会话时仅记录简单信息

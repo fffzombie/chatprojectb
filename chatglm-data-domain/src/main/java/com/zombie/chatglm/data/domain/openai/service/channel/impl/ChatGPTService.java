@@ -43,11 +43,11 @@ public class ChatGPTService implements OpenAiGroupService {
     protected OpenAiSession chatGPTOpenAiSession;
     @Timed(value = "chatgptmodel_domessage_response",description = "chatgpt模型对话次数")
     @Override
-    public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter) throws Exception {
+    public void doMessageResponse(ChatProcessAggregate chatProcessAggregate, ResponseBodyEmitter emitter,StringBuilder fullResponse) throws Exception {
         //1.请求消息
         List<Message> messages = chatProcessAggregate.getMessages().stream()
                 .map(entity -> Message.builder()
-                        .role(Constants.Role.valueOf(entity.getRole().toUpperCase()))
+                        .role(Constants.Role.valueOf(entity.getRole().getCode().toUpperCase()))
                         .content(entity.getContent())
                         .build())
                 .collect(Collectors.toList());
@@ -107,6 +107,7 @@ public class ChatGPTService implements OpenAiGroupService {
                     //返回消息
                     try {
                         emitter.send(delta.getContent());
+                        fullResponse.append(delta.getContent());
                     } catch (Exception e) {
                         throw new ChatGPTException(e.getMessage());
                     }
